@@ -104,7 +104,7 @@ button:hover {
         background: linear-gradient(90deg, #ff0000, #01fc54, #02ffff);
       }
     }
-.suggestion {
+.container-2 {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #f5f5f5;
     position: absolute;
@@ -116,10 +116,10 @@ button:hover {
     max-width: 40%;
     line-height: 1.5rem;
 }
-.suggestion span {
+.container-2 span {
     color: #adabab;
 }
-.container-2 {
+.container-3 {
     background-color: rgb(41, 41, 41);
     position: absolute;
     padding: 0;
@@ -131,7 +131,7 @@ button:hover {
     text-align: left;
     max-width: 100%;
 }
-.container-2 strong, ol, li {
+.container-3 strong, ol, li {
     padding: 0.5rem;
     line-height: 1.5rem;
     margin: 0;
@@ -140,12 +140,12 @@ button:hover {
     left: 3px;
     list-style: none;
 }
-.container-2 span {
+.container-3 span {
     color: #aaaaaa;
     font-size: 0.8rem;
 }
 @media (max-width: 1024px) and (min-width: 769px) {
-.suggestion {
+.container-2 {
     max-width: 80%;
     position: absolute;
     top: 35%;
@@ -167,14 +167,18 @@ button:hover {
         top: 74%;
         left: 8%;
     }
-    .suggestion {
+    .container-2 {
         max-width: 80%;
         position: absolute;
-        top: 35%;
+        top: 45%;
         left: 10%;
         transform: translate(0%, -10%);
     }
-    .container-2 strong, ol, li, span {
+    .container-3 {
+        position: absolute;
+        top: 70%;
+    }
+    .container-3 strong, ol, li, span {
         font-size: 0.7rem;
     }
 }
