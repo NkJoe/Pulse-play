@@ -49,8 +49,19 @@ body {
     left: 50%;
     transform: translate(-50%, -10%);
     justify-items: center;
+    height: 300px;
+}
+.image {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
 }
 .search input {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -10%);
     border-radius: 50px;
     padding: 0.7rem;
     background-color: rgb(44, 44, 44);
@@ -68,12 +79,11 @@ body {
 .search i{
     color: #666;
     position: absolute;
-    top: 74%;
-    left: 5%;
+    top: 53%;
 }
 button {
     position: absolute;
-    top: 105%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -10%);
     padding: 0.7rem;
