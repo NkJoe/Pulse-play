@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: border-box;
+}
+body {
+    background-color: rgb(26, 26, 26);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.nav-links ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+.nav-links li {
+    list-style: none;
+}
+.nav-links li a {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-decoration: none;
+    color: #f5f5f5;
+}
+.nav-links li a:hover {
+    color: #ff0000;
+    font-weight: 700;
+    background-color:  #00d4d4;
+    border: 1px solid #009B34;
+    border-radius: 50px;
+    padding: 0.5rem;
+    display: inline-block;
+    transition: 0.2s linear;
+    display: inline-block;
+}
+.nav-links i {
+    color: #ff0000;
+    margin-right: 0.3rem;
+    display: none;
+   
+}
+/* Show icon on hover or when active */
+.nav-links li a:hover i,
+.nav-links li a.active i {
+    display: inline-block;
+}
+.container {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    justify-items: center;
+}
+.search input {
+    border-radius: 50px;
+    padding: 0.7rem;
+    background-color: rgb(44, 44, 44);
+    border: none;
+    margin: 1rem;
+    color: #ffff;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 12px 15px 12px 50px;
+    width: 700px;
+}
+.search input:focus {
+    border: 1px solid green
+}
+.search i{
+    color: #666;
+    position: absolute;
+    top: 74%;
+    left: 5%;
+}
+button {
+    position: absolute;
+    top: 105%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    padding: 0.7rem;
+    border-radius: 50px;
+    width: 200px;
+    font-size: 0.8rem;
+    color: white;
+    background: linear-gradient(90deg, rgb(73, 1, 1),#680000,#a30101, #ff0202, rgb(255, 68, 68));
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3 ease, box-shadow 0.3s ease;
+}
+button:hover {
+    border: 0.3px solid #ffff;
+    animation: pulseGlow 2s ease-in-out infinite;
+}
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 5px rgba(4, 255, 255, 0.5); /* Teal glow */
+        background: linear-gradient(90deg, #ff0000, #01fc54, #02ffff);
+      }
+      50% {
+        box-shadow: 0 0 15px rgba(0, 211, 211, 0.8); /* Stronger glow */
+        background: linear-gradient(90deg, #df0000, #00d346, #00dfdf); /* Darker gradient */
+      }
+      100% {
+        box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+        background: linear-gradient(90deg, #ff0000, #01fc54, #02ffff);
+      }
+    }
+.suggestion {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f5f5f5;
+    position: absolute;
+    top: 35%;
+    left: 10%;
+    transform: translate(50%, -10%);
+    font-size: 0.8rem;
+    text-align: left;
+    max-width: 40%;
+    line-height: 1.5rem;
+}
+.suggestion span {
+    color: #adabab;
+}
+.container-2 {
+    background-color: rgb(41, 41, 41);
+    position: absolute;
+    padding: 0;
+    border-radius: 5px;
+    top: 50%;
+    width: 100%;
+    color: #f5f5f5;
+    font-size: 0.9rem;
+    text-align: left;
+    max-width: 100%;
+}
+.container-2 strong, ol, li {
+    padding: 0.5rem;
+    line-height: 1.5rem;
+    margin: 0;
+    position: relative;
+    top: 5px;
+    left: 3px;
+    list-style: none;
+}
+.container-2 span {
+    color: #aaaaaa;
+    font-size: 0.8rem;
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+.suggestion {
+    max-width: 80%;
+    position: absolute;
+    top: 35%;
+    left: 10%;
+    transform: translate(0%, -10%);
+}
+}
+@media (max-width: 768px) and (min-width: 320px) {
+    .nav-links ul {
+        gap: 1rem;
+        font-size: 0.8rem;
+    }
+    .search input {
+        max-width: 100%;
+        width: 300px;
+    }
+    .search i{
+        position: absolute;
+        top: 74%;
+        left: 8%;
+    }
+    .suggestion {
+        max-width: 80%;
+        position: absolute;
+        top: 35%;
+        left: 10%;
+        transform: translate(0%, -10%);
+    }
+    .container-2 strong, ol, li, span {
+        font-size: 0.7rem;
+    }
+}
