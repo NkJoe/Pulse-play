@@ -157,20 +157,24 @@ button:hover {
     font-size: 0.8rem;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
-.container-2 {
-    max-width: 80%;
-    position: absolute;
-    top: 24rem;
-    left: 10%;
-    transform: translate(0%, -10%);
-}
+    .container {
+        position: absolute;
+        top: 8%;
+    }
+    .container-2 {
+        max-width: 80%;
+        position: absolute;
+        top: 33%;
+        left: 10%;
+        transform: translate(0%, -10%);
+    }
     .nav-links ul {
         gap: 1rem;
         font-size: 0.8rem;
     }
     .container-3 {
         position: absolute;
-        top: 30rem
+        top: 42%;
     }
     .container-3 strong, ol, li, span {
         font-size: 0.7rem;
