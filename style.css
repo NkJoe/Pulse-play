@@ -79,11 +79,13 @@ body {
 .search i{
     color: #666;
     position: absolute;
+    left: -21.7rem;
     top: 53%;
+    font-size: 1.2rem;
 }
 button {
     position: absolute;
-    top: 70%;
+    top: 73%;
     left: 50%;
     transform: translate(-50%, -10%);
     padding: 0.7rem;
@@ -118,7 +120,7 @@ button:hover {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #f5f5f5;
     position: absolute;
-    top: 35%;
+    top: 50%;
     left: 10%;
     transform: translate(50%, -10%);
     font-size: 0.8rem;
@@ -158,58 +160,73 @@ button:hover {
 .container-2 {
     max-width: 80%;
     position: absolute;
-    top: 35%;
+    top: 28%;
     left: 10%;
     transform: translate(0%, -10%);
 }
+    .nav-links ul {
+        gap: 1rem;
+        font-size: 0.8rem;
+    }
+    .container-3 {
+        position: absolute;
+        top: 38%;
+    }
+    .container-3 strong, ol, li, span {
+        font-size: 0.7rem;
+    }
 }
-@media (max-width: 768px) {
+@media (max-width: 768px) and (min-width: 393px) {
     .nav-links ul {
         gap: 1rem;
         font-size: 0.8rem;
     }
     .search input {
-        max-width: 100%;
+        position: absolute;
+        left: -1rem;
         width: 300px;
     }
-    .search i{
+    .search i {
         position: absolute;
-        top: 74%;
-        left: 8%;
+        left: -10.3rem;
+        top: 53%;
+        font-size: 1.1rem;
     }
     .container-2 {
         max-width: 80%;
         position: absolute;
-        top: 35%;
+        top: 38%;
         left: 10%;
         transform: translate(0%, -10%);
     }
     .container-3 {
         position: absolute;
-        top: 50%;
+        top: 53%;
     }
     .container-3 strong, ol, li, span {
         font-size: 0.7rem;
     }
 }
 @media (max-width: 392px) {
-       .nav-links ul {
+    .nav-links ul {
         gap: 1rem;
         font-size: 0.8rem;
     }
     .search input {
-        max-width: 100%;
-        width: 300px;
+        position: absolute;
+        left: -1rem;
+        width: 280px;
     }
     .search i{
         position: absolute;
-        top: 74%;
-        left: 8%;
+        left: -9.6rem;
+        top: 53%;
+        font-size: 1rem;
     }
     .container-2 {
         max-width: 80%;
         position: absolute;
-        top: 45%;
+        top: 48%;
         left: 10%;
         transform: translate(0%, -10%);
     }
