@@ -44,12 +44,12 @@ body {
     display: inline-block;
 }
 .container {
-    position: absolute;
-    top: 10%;
+    position: relative;
+    width: 95%;
     left: 50%;
     transform: translate(-50%, -10%);
     justify-items: center;
-    height: 300px;
+    height: 380px;
 }
 .image {
     position: absolute;
@@ -59,9 +59,8 @@ body {
 }
 .search input {
     position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -10%);
+    top:35%;
+    left: 4.5rem;
     border-radius: 50px;
     padding: 0.7rem;
     background-color: rgb(44, 44, 44);
@@ -71,21 +70,18 @@ body {
     font-weight: 500;
     font-size: 1rem;
     padding: 12px 15px 12px 50px;
-    width: 700px;
-}
-.search input:focus {
-    border: 1px solid green
+    width: 650px;
 }
 .search i{
     color: #666;
     position: absolute;
-    left: -21.7rem;
-    top: 53%;
-    font-size: 1.2rem;
+    left: 6.7rem;
+    top: 43%;
+    font-size: 1rem;
 }
 button {
     position: absolute;
-    top: 73%;
+    top: 57%;
     left: 50%;
     transform: translate(-50%, -10%);
     padding: 0.7rem;
@@ -116,28 +112,24 @@ button:hover {
         background: linear-gradient(90deg, #ff0000, #01fc54, #02ffff);
       }
     }
-.container-2 {
+.text {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #f5f5f5;
-    position: absolute;
-    top: 38%;
-    left: 10%;
-    transform: translate(50%, -10%);
-    font-size: 0.8rem;
-    text-align: left;
-    max-width: 40%;
-    line-height: 1.5rem;
+    position: relative;
+    top: 70%;
+    width: 40rem;
 }
-.container-2 span {
+.text span {
     color: #adabab;
+    line-height: 1.3rem;
 }
 .container-3 {
     background-color: rgb(41, 41, 41);
     position: absolute;
     padding: 0;
     border-radius: 5px;
-    top: 50%;
-    width: 100%;
+    left: 1.5rem;
+    width: 95%;
     color: #f5f5f5;
     font-size: 0.9rem;
     text-align: left;
@@ -163,13 +155,6 @@ button:hover {
         left: 50%;
         transform: translate (50%, 8%);
     }
-    .container-2 {
-        max-width: 80%;
-        position: absolute;
-        top: 25%;
-        left: 10%;
-        transform: translate(0%, -10%);
-    }
     .nav-links ul {
         gap: 1rem;
         font-size: 0.8rem;
@@ -188,13 +173,6 @@ button:hover {
         top: 8%;
         left: 50%;
         transform: translate (50%, 8%);
-    }
-    .container-2 {
-        max-width: 80%;
-        position: absolute;
-        top: 25%;
-        left: 10%;
-        transform: translate(0%, -10%);
     }
     .nav-links ul {
         gap: 1rem;
@@ -215,13 +193,6 @@ button:hover {
         left: 50%;
         transform: translate (50%, 8%);
     }
-    .container-2 {
-        max-width: 80%;
-        position: absolute;
-        top: 35%;
-        left: 10%;
-        transform: translate(0%, -10%);
-    }
     .nav-links ul {
         gap: 1rem;
         font-size: 0.8rem;
@@ -239,58 +210,68 @@ button:hover {
         gap: 1rem;
         font-size: 0.8rem;
     }
+    .container {
+        width: 100%;
+    }
+    .text {
+        width: 20rem;
+        font-size: 0.8rem;
+    }
+    .text span {
+        font-size: 0.7rem;
+    } 
     .search input {
         position: absolute;
-        left: -1rem;
+        left: 1rem;
         width: 300px;
     }
     .search i {
         position: absolute;
-        left: -10.3rem;
-        top: 53%;
-        font-size: 1.1rem;
-    }
-    .container-2 {
-        max-width: 80%;
-        position: absolute;
-        top: 38%;
-        left: 10%;
-        transform: translate(0%, -10%);
+        left: 3rem;
+        top: 43%;
+        font-size: 1rem;
     }
     .container-3 {
         position: absolute;
-        top: 53%;
+        top: 46%;
+        left:0;
+        width: 100%;
     }
     .container-3 strong, ol, li, span {
         font-size: 0.7rem;
     }
 }
 @media (max-width: 392px) {
-    .nav-links ul {
+   .nav-links ul {
         gap: 1rem;
         font-size: 0.8rem;
     }
+    .container {
+        width: 100%;
+    }
+    .text {
+        width: 20rem;
+        font-size: 0.8rem;
+    }
+    .text span {
+        font-size: 0.7rem;
+    } 
     .search input {
         position: absolute;
-        left: -1rem;
-        width: 280px;
+        left: 1rem;
+        width: 250px;
     }
-    .search i{
+    .search i {
         position: absolute;
-        left: -9.6rem;
-        top: 53%;
+        left: 3rem;
+        top: 43%;
         font-size: 1rem;
-    }
-    .container-2 {
-        max-width: 80%;
-        position: absolute;
-        top: 48%;
-        left: 10%;
-        transform: translate(0%, -10%);
     }
     .container-3 {
         position: absolute;
-        top: 70%;
+        top: 60%;
+        left:0;
+        width: 100%;
     }
     .container-3 strong, ol, li, span {
         font-size: 0.7rem;
