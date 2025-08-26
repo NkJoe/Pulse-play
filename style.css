@@ -120,7 +120,7 @@ button:hover {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #f5f5f5;
     position: absolute;
-    top: 50%;
+    top: 38%;
     left: 10%;
     transform: translate(50%, -10%);
     font-size: 0.8rem;
@@ -156,11 +156,11 @@ button:hover {
     color: #aaaaaa;
     font-size: 0.8rem;
 }
-@media (max-width: 1024px) and (min-width: 769px) {
+@media (min-width: 768px) and (max-width: 1024px) {
 .container-2 {
     max-width: 80%;
     position: absolute;
-    top: 28%;
+    top: 24rem;
     left: 10%;
     transform: translate(0%, -10%);
 }
@@ -170,13 +170,13 @@ button:hover {
     }
     .container-3 {
         position: absolute;
-        top: 38%;
+        top: 30rem
     }
     .container-3 strong, ol, li, span {
         font-size: 0.7rem;
     }
 }
-@media (max-width: 768px) and (min-width: 393px) {
+@media (max-width: 767px) {
     .nav-links ul {
         gap: 1rem;
         font-size: 0.8rem;
