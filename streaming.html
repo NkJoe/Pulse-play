@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulse-Play - Streaming</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1 class="brand-name">Pulse-Play</h1>
+            </div>
+            
+            <div class="nav-controls">
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <div class="theme-toggle">
+                    <button id="theme-toggle">
+                        <i class="fas fa-sun" id="sun-icon"></i>
+                        <i class="fas fa-moon" id="moon-icon"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="nav-links" id="nav-links">
+                <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                <a href="#" class="nav-link active"><i class="fas fa-film"></i> Browse</a>
+                <a href="#" class="nav-link"><i class="fas fa-heart"></i> My List</a>
+                <a href="#" class="nav-link"><i class="fas fa-user"></i> Profile</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="streaming-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Discover Amazing Movies</h1>
+            <p class="hero-subtitle">Stream the latest blockbusters and timeless classics</p>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search for movies, TV shows...">
+                <button class="search-button"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Quick Navigation -->
+    <div class="category-quick-nav">
+        <button class="category-btn active" data-category="all">All</button>
+        <button class="category-btn" data-category="action">Action</button>
+        <button class="category-btn" data-category="drama">Drama</button>
+        <button class="category-btn" data-category="comedy">Comedy</button>
+        <button class="category-btn" data-category="sci-fi">Sci-Fi</button>
+        <button class="category-btn" data-category="horror">Horror</button>
+        <button class="category-btn" data-category="romance">Romance</button>
+        <button class="category-btn" data-category="thriller">Thriller</button>
+    </div>
+
+    <!-- Movies Section -->
+    <section class="movies-section">
+        <!-- Trending Now -->
+        <div class="category-section" data-category="trending">
+            <h3 class="category-heading">
+                <i class="fas fa-fire"></i> Trending Now
+                <span class="scroll-hint">← Scroll →</span>
+            </h3>
+            <div class="movies-scroll-container">
+                <div class="movies-grid trending-grid">
+                    <!-- Movies will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Movies -->
+        <div class="category-section" data-category="action">
+            <h3 class="category-heading">
+                <i class="fas fa-running"></i> Action & Adventure
+                <span class="scroll-hint">← Scroll →</span>
+            </h3>
+            <div class="movies-scroll-container">
+                <div class="movies-grid action-grid">
+                    <!-- Movies will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Drama Movies -->
+        <div class="category-section" data-category="drama">
+            <h3 class="category-heading">
+                <i class="fas fa-theater-masks"></i> Drama
+                <span class="scroll-hint">← Scroll →</span>
+            </h3>
+            <div class="movies-scroll-container">
+                <div class="movies-grid drama-grid">
+                    <!-- Movies will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Comedy Movies -->
+        <div class="category-section" data-category="comedy">
+            <h3 class="category-heading">
+                <i class="fas fa-laugh"></i> Comedy
+                <span class="scroll-hint">← Scroll →</span>
+            </h3>
+            <div class="movies-scroll-container">
+                <div class="movies-grid comedy-grid">
+                    <!-- Movies will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Sci-Fi Movies -->
+        <div class="category-section" data-category="sci-fi">
+            <h3 class="category-heading">
+                <i class="fas fa-rocket"></i> Science Fiction
+                <span class="scroll-hint">← Scroll →</span>
+            </h3>
+            <div class="movies-scroll-container">
+                <div class="movies-grid scifi-grid">
+                    <!-- Movies will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Horror Movies -->
+        <div class="category-section" data-category="horror">
+            <h3 class="category-heading">
+                <i class="fas fa-ghost"></i> Horror & Thriller
+                <span class="scroll-hint">← Scroll →</span>
+            </h3>
+            <div class="movies-scroll-container">
+                <div class="movies-grid horror-grid">
+                    <!-- Movies will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Pulse-Play</h3>
+                <p>Your ultimate streaming destination</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Pulse-Play. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner">
+            <i class="fas fa-film"></i>
+            <p>Loading Movies...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
