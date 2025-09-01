@@ -3,39 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pulse-Play - Streaming</title>
+    <meta name="description" content="Pulse-Play - Your ultimate streaming platform for movies and music. Stream high-quality content across all devices with personalized recommendations.">
+    <meta name="keywords" content="streaming, movies, music, entertainment, platform">
+    <title>Pulse-Play | Premium Streaming Platform</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="icons8-microsoft-stream-2019-100 (1).png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-brand">
-                <h1 class="brand-name">Pulse-Play</h1>
+                <img src="icons8-microsoft-stream-2019-100 (1).png" alt="Pulse-Play Logo" class="logo">
+                <span class="brand-name">Pulse-Play</span>
             </div>
-            
+            <div class="nav-links" id="nav-links">
+                <ul>
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i>Home</a></li>
+                    <li><a href="#explore" class="nav-link active"><i class="fas fa-compass"></i>Explore</a></li>
+                    <li><a href="#trending" class="nav-link"><i class="fas fa-fire"></i>Trending</a></li>
+                    <li><a href="#library" class="nav-link"><i class="fas fa-music"></i>Library</a></li>
+                </ul>
+            </div>
             <div class="nav-controls">
-                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                
                 <div class="theme-toggle">
-                    <button id="theme-toggle">
+                    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
                         <i class="fas fa-sun" id="sun-icon"></i>
                         <i class="fas fa-moon" id="moon-icon"></i>
                     </button>
                 </div>
-            </div>
-            
-            <div class="nav-links" id="nav-links">
-                <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
-                <a href="#" class="nav-link active"><i class="fas fa-film"></i> Browse</a>
-                <a href="#" class="nav-link"><i class="fas fa-heart"></i> My List</a>
-                <a href="#" class="nav-link"><i class="fas fa-user"></i> Profile</a>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
             </div>
         </div>
     </nav>
