@@ -85,7 +85,7 @@ body {
 
 /* Theme Toggle Button */
 .theme-toggle {
-    display: flex;
+    display: none;
     align-items: center;
 }
 
@@ -381,6 +381,7 @@ body {
 /* Responsive Design for Search Section */
 @media (max-width: 768px) {
     .search-section {
+        display: flex;
         flex-direction: column;
         gap: 1.5rem;
     }
@@ -417,6 +418,12 @@ body {
         border-radius: 50px;
     }
     
+    .search-section {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
     .search-input {
         min-width: unset;
         width: 100%;
@@ -1174,15 +1181,6 @@ body {
     transform: scale(1.1);
 }
 
-.edit-btn {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.edit-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: scale(1.1);
-}
-
 .info-btn {
     background: rgba(255, 255, 255, 0.2);
 }
@@ -1202,7 +1200,6 @@ body {
     margin-bottom: 0.5rem;
     line-height: 1.3;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -1320,11 +1317,20 @@ body {
     
     .search-container {
         flex-direction: column;
-        border-radius: 25px;
+        border-radius: 30px;
+        gap: 1rem;
     }
     
     .search-button {
-        border-radius: 0 0 25px 25px;
+        border-radius: 50px;
+    }
+
+    .search-input {
+        font-size: 1rem;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
     }
     
     .category-quick-nav {
@@ -1334,7 +1340,6 @@ body {
     .category-btn {
         padding: 0.6rem 1.2rem;
         font-size: 0.8rem;
-        margin-left: 30px;
     }
     
     .movies-grid {
@@ -1350,4 +1355,3 @@ body {
         height: 200px;
     }
 }
-
