@@ -310,7 +310,7 @@ function loadDemoMovies() {
             { id: 40, title: 'Honey Do Not', poster: './honey-dont.jpeg', rating: 5.6, year: 2025, genre: 'Comedy, Crime, Mystery', videoUrl: '#', downloadUrl: '#' },
             { id: 41, title: 'The Bad Guys 2', poster: './bad-guys-2.jpeg', rating: 7.1, year: 2025, genre: 'Comdey, Action, Animation', videoUrl: '#', downloadUrl: '#' },
             { id: 42, title: 'The Super Mario Bros. Movie', poster: './mario.jpeg', rating: 7.5, year: 2023, genre: 'Animation, Comedy', videoUrl: 'https://www.w3schools.com/html/mario.mp4', downloadUrl: 'https://www.w3schools.com/html/mario.mp4' },
-            { id: 43, title: 'Guardians of the Galaxy Vol. 3', poster: 'gotg.jpeg', rating: 8.1, year: 2023, genre: 'Action, Comedy', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4', downloadUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
+            { id: 43, title: 'Guardians of the Galaxy Vol. 3', poster: 'GOTG.jpeg', rating: 8.1, year: 2023, genre: 'Action, Comedy', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4', downloadUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
             { id: 44, title: 'Ant-Man and the Wasp: Quantumania', poster: './antman.jpeg', rating: 6.1, year: 2023, genre: 'Action, Comedy', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4', downloadUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
             { id: 45, title: 'Shazam! Fury of the Gods', poster: 'shazam.jpeg', rating: 6.2, year: 2023, genre: 'Action, Comedy', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4', downloadUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
             { id: 46, title: 'Cocaine Bear', poster: './cocaine.jpeg', rating: 6.3, year: 2023, genre: 'Comedy, Horror' },
