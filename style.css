@@ -1353,4 +1353,14 @@ body {
     .movie-poster {
         height: 200px;
     }
+    .play-btn, .info-btn, .download-btn {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        gap: 0.3rem;
+    }
+     .play-btn, .info-btn, .download-btn .fas {
+        font-size: 0.7rem;
+        color: #ffff;
+     }
 }
