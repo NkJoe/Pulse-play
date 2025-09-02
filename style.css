@@ -222,8 +222,8 @@ body {
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(135deg, rgba(229, 9, 20, 0.9) 0%, rgba(178, 7, 16, 0.9) 100%), 
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%23e50914" stop-opacity="0.3"/><stop offset="100%" stop-color="%23b20710" stop-opacity="0.1"/></radialGradient></defs><rect width="100%" height="100%" fill="url(%23a)"/></svg>');
+    background: linear-gradient(135deg, rgba(229, 9, 20, 0.652) 0%, rgba(178, 7, 16, 0.9) 100%), 
+                url('poster.jpeg');
     padding: 120px 0 80px;
     text-align: center;
     color: white;
@@ -289,11 +289,12 @@ body {
     gap: 1.5rem;
 }
 
-.search-container {
+.hero-section .search-section .search-container {
     position: relative;
-    max-width: 800px;
+    max-width: 1200px;
     width: 100%;
     margin: 0;
+    min-width: 650px;
 }
 
 .search-input {
@@ -306,7 +307,6 @@ body {
     color: white;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    min-width: 600px;
 }
 
 .search-input::placeholder {
@@ -527,12 +527,12 @@ body {
 }
 
 .category-card.movies {
-    background: linear-gradient(135deg, #e50914 0%, #b20710 50%, #831010 100%);
+    background: linear-gradient(135deg, #e50914b1 0%, #b2070fe6 50%, #831010 100%), url(./poster-2.jpeg);
     color: white;
 }
 
 .category-card.music {
-    background: linear-gradient(135deg, #1db954 0%, #1ed760 50%, #169c46 100%);
+    background: linear-gradient(135deg, #1db954b1 0%, #1ed75fd9 50%, #169c46 100%), url(./song.jpeg);
     color: white;
 }
 
@@ -925,12 +925,15 @@ body {
 .search-container {
     display: flex;
     max-width: 500px;
+    width: 100%;
     margin: 0 auto;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 50px;
     padding: 0.5rem;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .search-input {
@@ -941,6 +944,10 @@ body {
     color: white;
     font-size: 1rem;
     outline: none;
+    min-width: 0;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
 }
 
 .search-input::placeholder {
@@ -955,6 +962,8 @@ body {
     color: white;
     cursor: pointer;
     transition: all 0.3s ease;
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .search-button:hover {
@@ -1132,6 +1141,15 @@ body {
     transform: scale(1.1);
 }
 
+.edit-btn {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.edit-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
 .info-btn {
     background: rgba(255, 255, 255, 0.2);
 }
@@ -1224,6 +1242,11 @@ body {
     
     .hero-subtitle {
         font-size: 1.1rem;
+    }
+    
+    .search-container {
+        max-width: 90%;
+        width: 90%;
     }
     
     .category-quick-nav {

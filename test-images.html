@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-image { max-width: 200px; margin: 10px; border: 1px solid #ccc; }
+        .error { color: red; }
+        .success { color: green; }
+    </style>
+</head>
+<body>
+    <h1>Image Loading Test</h1>
+    
+    <h2>Testing Local Images:</h2>
+    
+    <div>
+        <h3>Mission Impossible:</h3>
+        <img src="./mission-impossible.jpeg" alt="Mission Impossible" class="test-image" onload="this.nextElementSibling.textContent='✅ Loaded successfully'" onerror="this.nextElementSibling.textContent='❌ Failed to load'">
+        <p class="status">Loading...</p>
+    </div>
+    
+    <div>
+        <h3>Smile:</h3>
+        <img src="./smile.jpeg" alt="Smile" class="test-image" onload="this.nextElementSibling.textContent='✅ Loaded successfully'" onerror="this.nextElementSibling.textContent='❌ Failed to load'">
+        <p class="status">Loading...</p>
+    </div>
+    
+    <div>
+        <h3>Poster:</h3>
+        <img src="./poster.jpeg" alt="Poster" class="test-image" onload="this.nextElementSibling.textContent='✅ Loaded successfully'" onerror="this.nextElementSibling.textContent='❌ Failed to load'">
+        <p class="status">Loading...</p>
+    </div>
+    
+    <h2>Testing Placeholder Images:</h2>
+    <div>
+        <h3>Placeholder:</h3>
+        <img src="https://via.placeholder.com/200x300/1a1a1a/ffffff?text=Test" alt="Placeholder" class="test-image" onload="this.nextElementSibling.textContent='✅ Loaded successfully'" onerror="this.nextElementSibling.textContent='❌ Failed to load'">
+        <p class="status">Loading...</p>
+    </div>
+    
+    <script>
+        // Check if images are accessible
+        console.log('Testing image accessibility...');
+        
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            img.addEventListener('load', function() {
+                console.log(`✅ ${this.alt} loaded successfully`);
+            });
+            
+            img.addEventListener('error', function() {
+                console.log(`❌ ${this.alt} failed to load`);
+            });
+        });
+    </script>
+</body>
+</html> 

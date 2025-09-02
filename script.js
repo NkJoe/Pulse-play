@@ -215,13 +215,21 @@ document.head.appendChild(style);
 
 // Streaming Page Functionality
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('📄 DOM Content Loaded');
+    console.log('📍 Current pathname:', window.location.pathname);
+    
     // Check if we're on the streaming page
     if (window.location.pathname.includes('streaming.html')) {
+        console.log('🎬 Streaming page detected, initializing...');
         initializeStreamingPage();
+    } else {
+        console.log('🏠 Not on streaming page, skipping initialization');
     }
 });
 
 function initializeStreamingPage() {
+    console.log('🚀 Initializing streaming page...');
+    
     // Load demo movie data
     loadDemoMovies();
     
@@ -232,6 +240,7 @@ function initializeStreamingPage() {
     const urlParams = new URLSearchParams(window.location.search);
     const searchTerm = urlParams.get('search');
     if (searchTerm) {
+        console.log(`🔍 Search term found: ${searchTerm}`);
         handleSearchResults(searchTerm);
     }
     
@@ -240,71 +249,89 @@ function initializeStreamingPage() {
         const loadingOverlay = document.getElementById('loading-overlay');
         if (loadingOverlay) {
             loadingOverlay.classList.add('hidden');
+            console.log('🎬 Loading overlay hidden');
         }
     }, 1000);
+    
+    console.log('✅ Streaming page initialization complete');
 }
 
 function loadDemoMovies() {
+    console.log('🔄 Loading demo movies...');
+    
     // Demo movie data for different categories
     const demoMovies = {
         'trending': [
-            { id: 1, title: 'Mission Impossible: Dead Reckoning', poster: 'https://via.placeholder.com/200x300/1a1a1a/ffffff?text=MI7', rating: 8.5, year: 2023, genre: 'Action, Thriller' },
-            { id: 2, title: 'Oppenheimer', poster: 'https://via.placeholder.com/200x300/2a2a2a/ffffff?text=Oppen', rating: 8.9, year: 2023, genre: 'Drama, History' },
-            { id: 3, title: 'Barbie', poster: 'https://via.placeholder.com/200x300/3a3a3a/ffffff?text=Barbie', rating: 7.3, year: 2023, genre: 'Comedy, Fantasy' },
-            { id: 4, title: 'Dune: Part Two', poster: 'https://via.placeholder.com/200x300/4a4a4a/ffffff?text=Dune2', rating: 8.4, year: 2024, genre: 'Sci-Fi, Adventure' },
-            { id: 5, title: 'The Super Mario Bros. Movie', poster: 'https://via.placeholder.com/200x300/5a5a5a/ffffff?text=Mario', rating: 7.5, year: 2023, genre: 'Animation, Comedy' },
-            { id: 6, title: 'Guardians of the Galaxy Vol. 3', poster: 'https://via.placeholder.com/200x300/6a6a6a/ffffff?text=GOTG3', rating: 8.1, year: 2023, genre: 'Action, Comedy' }
+            { id: 1, title: 'Mission Impossible: Dead Reckoning', poster: './mission-impossible.jpeg', rating: 8.5, year: 2023, genre: 'Action, Thriller' },
+            { id: 2, title: 'Oppenheimer', poster: './oppenheimer.jpeg', rating: 8.9, year: 2023, genre: 'Drama, History' },
+            { id: 3, title: 'Barbie', poster: './barbie.jpeg', rating: 7.3, year: 2023, genre: 'Comedy, Fantasy' },
+            { id: 4, title: 'Dune: Part Two', poster: './dune.jpeg', rating: 8.4, year: 2024, genre: 'Sci-Fi, Adventure' },
+            { id: 5, title: 'The Super Mario Bros. Movie', poster: './mario.jpeg', rating: 7.5, year: 2023, genre: 'Animation, Comedy' },
+            { id: 6, title: 'Guardians of the Galaxy Vol. 3', poster: './gotg.jpeg', rating: 8.1, year: 2023, genre: 'Action, Comedy' }
         ],
         'action': [
-            { id: 7, title: 'John Wick: Chapter 4', poster: 'https://via.placeholder.com/200x300/7a7a7a/ffffff?text=JW4', rating: 8.2, year: 2023, genre: 'Action, Crime' },
-            { id: 8, title: 'Fast X', poster: 'https://via.placeholder.com/200x300/8a8a8a/ffffff?text=FastX', rating: 7.8, year: 2023, genre: 'Action, Thriller' },
-            { id: 9, title: 'The Equalizer 3', poster: 'https://via.placeholder.com/200x300/9a9a9a/ffffff?text=Equal3', rating: 7.1, year: 2023, genre: 'Action, Crime' },
-            { id: 10, title: 'Extraction 2', poster: 'https://via.placeholder.com/200x300/aa1a1a/ffffff?text=Extract2', rating: 7.6, year: 2023, genre: 'Action, Thriller' },
-            { id: 11, title: 'The Gray Man', poster: 'https://via.placeholder.com/200x300/bb1a1a/ffffff?text=GrayMan', rating: 6.5, year: 2022, genre: 'Action, Thriller' },
-            { id: 12, title: 'Top Gun: Maverick', poster: 'https://via.placeholder.com/200x300/cc1a1a/ffffff?text=TopGun2', rating: 8.3, year: 2022, genre: 'Action, Drama' }
+            { id: 7, title: 'John Wick: Chapter 4', poster: './john-wick.jpeg', rating: 8.2, year: 2023, genre: 'Action, Crime' },
+            { id: 8, title: 'Fast X', poster: './fastx.jpeg', rating: 7.8, year: 2023, genre: 'Action, Thriller' },
+            { id: 9, title: 'The Equalizer 3', poster: './equilizer.jpeg', rating: 7.1, year: 2023, genre: 'Action, Crime' },
+            { id: 10, title: 'Extraction 2', poster: './extraction.jpeg', rating: 7.6, year: 2023, genre: 'Action, Thriller' },
+            { id: 11, title: 'The Gray Man', poster: './grayman.jpeg', rating: 6.5, year: 2022, genre: 'Action, Thriller' },
+            { id: 12, title: 'Top Gun: Maverick', poster: './topgun.jpeg', rating: 8.3, year: 2022, genre: 'Action, Drama' }
         ],
         'drama': [
-            { id: 13, title: 'The Whale', poster: 'https://via.placeholder.com/200x300/dd1a1a/ffffff?text=Whale', rating: 7.7, year: 2022, genre: 'Drama, History' },
-            { id: 14, title: 'Everything Everywhere All at Once', poster: 'https://via.placeholder.com/200x300/ee1a1a/ffffff?text=EEAAO', rating: 8.0, year: 2022, genre: 'Drama, Sci-Fi' },
-            { id: 15, title: 'The Banshees of Inisherin', poster: 'https://via.placeholder.com/200x300/ff1a1a/ffffff?text=Banshees', rating: 7.8, year: 2022, genre: 'Drama, Comedy' },
+            { id: 13, title: 'The Whale', poster: './whale.jpeg', rating: 7.7, year: 2022, genre: 'Drama, History' },
+            { id: 14, title: 'Everything Everywhere All at Once', poster: 'eeaat.jpeg', rating: 8.0, year: 2022, genre: 'Drama, Sci-Fi' },
+            { id: 15, title: 'The Banshees of Inisherin', poster: './banshee.jpeg', rating: 7.8, year: 2022, genre: 'Drama, Comedy' },
             { id: 16, title: 'Tár', poster: 'https://via.placeholder.com/200x300/1a2a2a/ffffff?text=Tar', rating: 7.4, year: 2022, genre: 'Drama, Music' },
-            { id: 17, title: 'Triangle of Sadness', poster: 'https://via.placeholder.com/200x300/2a3a3a/ffffff?text=Triangle', rating: 7.2, year: 2022, genre: 'Drama, Comedy' },
-            { id: 18, title: 'Women Talking', poster: 'https://via.placeholder.com/200x300/3a4a4a/ffffff?text=Women', rating: 7.3, year: 2022, genre: 'Drama, Thriller' }
+            { id: 17, title: 'Triangle of Sadness', poster: './tos.jpeg', rating: 7.2, year: 2022, genre: 'Drama, Comedy' },
+            { id: 18, title: 'Women Talking', poster: './women.jpeg', rating: 7.3, year: 2022, genre: 'Drama, Thriller' }
         ],
         'comedy': [
-            { id: 19, title: 'The Super Mario Bros. Movie', poster: 'https://via.placeholder.com/200x300/4a5a5a/ffffff?text=Mario', rating: 7.5, year: 2023, genre: 'Animation, Comedy' },
-            { id: 20, title: 'Guardians of the Galaxy Vol. 3', poster: 'https://via.placeholder.com/200x300/5a6a6a/ffffff?text=GOTG3', rating: 8.1, year: 2023, genre: 'Action, Comedy' },
-            { id: 21, title: 'Ant-Man and the Wasp: Quantumania', poster: 'https://via.placeholder.com/200x300/6a7a7a/ffffff?text=AntMan3', rating: 6.1, year: 2023, genre: 'Action, Comedy' },
-            { id: 22, title: 'Shazam! Fury of the Gods', poster: 'https://via.placeholder.com/200x300/7a8a8a/ffffff?text=Shazam2', rating: 6.2, year: 2023, genre: 'Action, Comedy' },
-            { id: 23, title: 'Cocaine Bear', poster: 'https://via.placeholder.com/200x300/8a9a9a/ffffff?text=Cocaine', rating: 6.3, year: 2023, genre: 'Comedy, Horror' },
-            { id: 24, title: 'Renfield', poster: 'https://via.placeholder.com/200x300/9aaa1a/ffffff?text=Renfield', rating: 6.4, year: 2023, genre: 'Comedy, Horror' }
+            { id: 19, title: 'The Super Mario Bros. Movie', poster: './mario.jpeg', rating: 7.5, year: 2023, genre: 'Animation, Comedy' },
+            { id: 20, title: 'Guardians of the Galaxy Vol. 3', poster: 'gotg.jpeg', rating: 8.1, year: 2023, genre: 'Action, Comedy' },
+            { id: 21, title: 'Ant-Man and the Wasp: Quantumania', poster: './antman.jpeg', rating: 6.1, year: 2023, genre: 'Action, Comedy' },
+            { id: 22, title: 'Shazam! Fury of the Gods', poster: 'shazam.jpeg', rating: 6.2, year: 2023, genre: 'Action, Comedy' },
+            { id: 23, title: 'Cocaine Bear', poster: './cocaine.jpeg', rating: 6.3, year: 2023, genre: 'Comedy, Horror' },
+            { id: 24, title: 'Renfield', poster: './renfield.jpeg', rating: 6.4, year: 2023, genre: 'Comedy, Horror' }
         ],
         'sci-fi': [
-            { id: 25, title: 'Dune: Part Two', poster: 'https://via.placeholder.com/200x300/aa1a1a/ffffff?text=Dune2', rating: 8.4, year: 2024, genre: 'Sci-Fi, Adventure' },
+            { id: 25, title: 'Dune: Part Two', poster: './dune.jpeg', rating: 8.4, year: 2024, genre: 'Sci-Fi, Adventure' },
             { id: 26, title: 'The Creator', poster: 'https://via.placeholder.com/200x300/bb2a2a/ffffff?text=Creator', rating: 7.2, year: 2023, genre: 'Sci-Fi, Action' },
             { id: 27, title: 'Poor Things', poster: 'https://via.placeholder.com/200x300/cc3a3a/ffffff?text=Poor', rating: 7.8, year: 2023, genre: 'Sci-Fi, Drama' },
-            { id: 28, title: 'Everything Everywhere All at Once', poster: 'https://via.placeholder.com/200x300/dd4a4a/ffffff?text=EEAAO', rating: 8.0, year: 2022, genre: 'Sci-Fi, Drama' },
+            { id: 28, title: 'Everything Everywhere All at Once', poster: './EEAAT.jpeg', rating: 8.0, year: 2022, genre: 'Sci-Fi, Drama' },
             { id: 29, title: 'Nope', poster: 'https://via.placeholder.com/200x300/ee5a5a/ffffff?text=Nope', rating: 7.0, year: 2022, genre: 'Sci-Fi, Horror' },
             { id: 30, title: 'Prey', poster: 'https://via.placeholder.com/200x300/ff6a6a/ffffff?text=Prey', rating: 7.2, year: 2022, genre: 'Sci-Fi, Action' }
         ],
         'horror': [
-            { id: 31, title: 'Five Nights at Freddy\'s', poster: 'https://via.placeholder.com/200x300/1a7a7a/ffffff?text=FNAF', rating: 6.8, year: 2023, genre: 'Horror, Thriller' },
-            { id: 32, title: 'Talk to Me', poster: 'https://via.placeholder.com/200x300/2a8a8a/ffffff?text=Talk', rating: 7.4, year: 2023, genre: 'Horror, Thriller' },
-            { id: 33, title: 'Evil Dead Rise', poster: 'https://via.placeholder.com/200x300/3a9a9a/ffffff?text=Evil', rating: 6.9, year: 2023, genre: 'Horror, Thriller' },
-            { id: 34, title: 'Scream VI', poster: 'https://via.placeholder.com/200x300/4aaa1a/ffffff?text=Scream6', rating: 7.1, year: 2023, genre: 'Horror, Thriller' },
-            { id: 35, title: 'M3GAN', poster: 'https://via.placeholder.com/200x300/5aba2a/ffffff?text=M3GAN', rating: 6.4, year: 2022, genre: 'Horror, Sci-Fi' },
-            { id: 36, title: 'Smile', poster: 'https://via.placeholder.com/200x300/6aca3a/ffffff?text=Smile', rating: 6.6, year: 2022, genre: 'Horror, Thriller' }
+            { id: 31, title: 'Five Nights at Freddy\'s', poster: './fivenights.jpeg', rating: 6.8, year: 2023, genre: 'Horror, Thriller' },
+            { id: 32, title: 'Talk to Me', poster: './talk.jpeg', rating: 7.4, year: 2023, genre: 'Horror, Thriller' },
+            { id: 33, title: 'Evil Dead Rise', poster: './evildead.jpeg', rating: 6.9, year: 2023, genre: 'Horror, Thriller' },
+            { id: 34, title: 'Scream VI', poster: './screem.jpeg', rating: 7.1, year: 2023, genre: 'Horror, Thriller' },
+            { id: 35, title: 'M3GAN', poster: './megan.jpeg', rating: 6.4, year: 2022, genre: 'Horror, Sci-Fi' },
+            { id: 36, title: 'Smile', poster: './smile.jpeg', rating: 6.6, year: 2022, genre: 'Horror, Thriller' }
         ]
     };
     
     // Populate each category with movies
     Object.keys(demoMovies).forEach(category => {
-        const grid = document.querySelector(`.${category}-grid`);
+        let gridSelector;
+        if (category === 'sci-fi') {
+            gridSelector = '.scifi-grid';
+        } else {
+            gridSelector = `.${category}-grid`;
+        }
+        
+        console.log(`🔍 Looking for grid: ${gridSelector}`);
+        const grid = document.querySelector(gridSelector);
+        
         if (grid) {
+            console.log(`✅ Found grid for ${category}, adding ${demoMovies[category].length} movies`);
             demoMovies[category].forEach(movie => {
                 const movieCard = createMovieCard(movie);
                 grid.appendChild(movieCard);
+                console.log(`➕ Added movie: ${movie.title} with poster: ${movie.poster}`);
             });
+        } else {
+            console.error(`❌ Grid not found for category: ${category} (selector: ${gridSelector})`);
         }
     });
 }
@@ -315,7 +342,7 @@ function createMovieCard(movie) {
     movieCard.setAttribute('data-movie-id', movie.id);
     
     movieCard.innerHTML = `
-        <div class="movie-poster">
+        <div class="movie-poster" data-movie-id="${movie.id}">
             <img src="${movie.poster}" alt="${movie.title}" loading="lazy">
             <div class="movie-overlay">
                 <button class="play-btn" data-movie-id="${movie.id}"><i class="fas fa-play"></i></button>
