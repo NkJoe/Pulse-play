@@ -1161,7 +1161,7 @@ body {
     opacity: 1;
 }
 
-.play-btn, .info-btn {
+.play-btn, .info-btn, .download-btn {
     background: var(--accent-color);
     border: none;
     color: white;
@@ -1176,7 +1176,7 @@ body {
     font-size: 1.2rem;
 }
 
-.play-btn:hover, .info-btn:hover {
+.play-btn:hover, .info-btn:hover, .download-btn:hover {
     background: var(--accent-hover);
     transform: scale(1.1);
 }

@@ -262,39 +262,39 @@ function loadDemoMovies() {
     // Demo movie data for different categories
     const demoMovies = {
         'trending': [
-            { id: 1, title: 'Mission Impossible: Dead Reckoning', poster: './mission-impossible.jpeg', rating: 8.5, year: 2023, genre: 'Action, Thriller' },
-            { id: 2, title: 'Oppenheimer', poster: './oppenheimer.jpeg', rating: 8.9, year: 2023, genre: 'Drama, History' },
-            { id: 3, title: 'Barbie', poster: './barbie.jpeg', rating: 7.3, year: 2023, genre: 'Comedy, Fantasy' },
-            { id: 4, title: 'Dune: Part Two', poster: './dune.jpeg', rating: 8.4, year: 2024, genre: 'Sci-Fi, Adventure' },
-            { id: 5, title: 'The Super Mario Bros. Movie', poster: './mario.jpeg', rating: 7.5, year: 2023, genre: 'Animation, Comedy' },
-            { id: 6, title: 'Guardians of the Galaxy Vol. 3', poster: './gotg.jpeg', rating: 8.1, year: 2023, genre: 'Action, Comedy' }
+            { id: 1, title: 'Mission Impossible: Dead Reckoning', poster: './mission-impossible.jpeg', rating: 8.5, year: 2023, genre: 'Action, Thriller', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4', downloadUrl: 'https://downloadwella.com/og67u751hl1s/Mission.Impossible.-.The.Final.Reckoning.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 2, title: 'Oppenheimer', poster: './oppenheimer.jpeg', rating: 8.9, year: 2023, genre: 'Drama, History', videoUrl: 'https://www.w3schools.com/html/movie.mp4', downloadUrl: 'https://downloadwella.com/i2udddfbfato/Oppenheimer.(NKIRI.COM).2023.BluRay.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 3, title: 'Barbie', poster: './barbie.jpeg', rating: 7.3, year: 2023, genre: 'Comedy, Fantasy', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4', downloadUrl: 'https://downloadwella.com/wgd63oc9k87e/Barbie.(NKIRI.COM).2023.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 4, title: 'Dune: Part Two', poster: './dune.jpeg', rating: 8.4, year: 2024, genre: 'Sci-Fi, Adventure', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4', downloadUrl: 'https://downloadwella.com/4l4s5gt8myoy/Dune.Part.Two.(NKIRI.COM).2024.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 5, title: 'The Super Mario Bros. Movie', poster: './mario.jpeg', rating: 7.5, year: 2023, genre: 'Animation, Comedy', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4', downloadUrl: 'https://downloadwella.com/pxm4qmjegwaa/Super.Mario.Bros.Movie.(NKIRI.COM).2023.AMZN.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 6, title: 'Guardians of the Galaxy Vol. 3', poster: './gotg.jpeg', rating: 8.1, year: 2023, genre: 'Action, Comedy', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4', downloadUrl: 'https://downloadwella.com/5rthk5bssrss/Guardians.of.the.Galaxy.Vol.3.(NKIRI.COM).2023.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' }
         ],
         'action': [
-            { id: 7, title: 'John Wick: Chapter 4', poster: './john-wick.jpeg', rating: 8.2, year: 2023, genre: 'Action, Crime' },
-            { id: 8, title: 'Fast X', poster: './fastx.jpeg', rating: 7.8, year: 2023, genre: 'Action, Thriller' },
-            { id: 9, title: 'The Equalizer 3', poster: './equilizer.jpeg', rating: 7.1, year: 2023, genre: 'Action, Crime' },
-            { id: 10, title: 'Extraction 2', poster: './extraction.jpeg', rating: 7.6, year: 2023, genre: 'Action, Thriller' },
-            { id: 11, title: 'The Gray Man', poster: './grayman.jpeg', rating: 6.5, year: 2022, genre: 'Action, Thriller' },
-            { id: 12, title: 'Top Gun: Maverick', poster: './topgun.jpeg', rating: 8.3, year: 2022, genre: 'Action, Drama' }
+            { id: 7, title: 'John Wick: Chapter 4', poster: './john-wick.jpeg', rating: 8.2, year: 2023, genre: 'Action, Crime', videoUrl: 'https://www.w3schools.com/html/johnwick.mp4', downloadUrl: 'https://downloadwella.com/0pcd6mds5inw/John.Wick.Chapter.4.(NKIRI.COM).2023.WEB-DL.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 8, title: 'Fast X', poster: './fastx.jpeg', rating: 7.8, year: 2023, genre: 'Action, Thriller', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4', downloadUrl: 'https://downloadwella.com/707wgtgr3p8r/Fast.X.(NKIRI.COM).2023.AMZN.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html4' },
+            { id: 9, title: 'The Equalizer 3', poster: './equilizer.jpeg', rating: 7.1, year: 2023, genre: 'Action, Crime', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4', downloadUrl: 'https://downloadwella.com/bm9u6zc2z9k4/The.Equalizer.3.(NKIRI.COM).2023.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 10, title: 'Extraction 2', poster: './extraction.jpeg', rating: 7.6, year: 2023, genre: 'Action, Thriller', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4', downloadUrl: 'https://downloadwella.com/f8eog3il9rpg/Extraction.2.(NKIRI.COM).2023.NF.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 11, title: 'The Gray Man', poster: './grayman.jpeg', rating: 6.5, year: 2022, genre: 'Action, Thriller', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4', downloadUrl: '#' },
+            { id: 12, title: 'Top Gun: Maverick', poster: './topgun.jpeg', rating: 8.3, year: 2022, genre: 'Action, Drama', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4', downloadUrl: 'https://downloadwella.com/cybkgpvpbhfa/Top.Gun.Maverick.(NKIRI.COM).2022.WEB-DL.DOWNLOADED.FROM.NKIRI.COM.mp4' }
         ],
         'drama': [
-            { id: 13, title: 'The Whale', poster: './whale.jpeg', rating: 7.7, year: 2022, genre: 'Drama, History' },
-            { id: 14, title: 'Everything Everywhere All at Once', poster: 'eeaat.jpeg', rating: 8.0, year: 2022, genre: 'Drama, Sci-Fi' },
-            { id: 15, title: 'The Banshees of Inisherin', poster: './banshee.jpeg', rating: 7.8, year: 2022, genre: 'Drama, Comedy' },
-            { id: 16, title: 'Tár', poster: 'https://via.placeholder.com/200x300/1a2a2a/ffffff?text=Tar', rating: 7.4, year: 2022, genre: 'Drama, Music' },
-            { id: 17, title: 'Triangle of Sadness', poster: './tos.jpeg', rating: 7.2, year: 2022, genre: 'Drama, Comedy' },
-            { id: 18, title: 'Women Talking', poster: './women.jpeg', rating: 7.3, year: 2022, genre: 'Drama, Thriller' }
+            { id: 13, title: 'The Whale', poster: './whale.jpeg', rating: 7.7, year: 2022, genre: 'Drama, History', videoUrl: 'https://www.w3schools.com/html/whale.mp4', downloadUrl: 'https://www.w3schools.com/html/whale.mp4' },
+            { id: 14, title: 'Everything Everywhere All at Once', poster: 'eeaat.jpeg', rating: 8.0, year: 2022, genre: 'Drama, Sci-Fi', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4', downloadUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
+            { id: 15, title: 'The Banshees of Inisherin', poster: './banshee.jpeg', rating: 7.8, year: 2022, genre: 'Drama, Comedy', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4', downloadUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
+            { id: 16, title: 'Tár', poster: 'https://via.placeholder.com/200x300/1a2a2a/ffffff?text=Tar', rating: 7.4, year: 2022, genre: 'Drama, Music', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4', downloadUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
+            { id: 17, title: 'Triangle of Sadness', poster: './tos.jpeg', rating: 7.2, year: 2022, genre: 'Drama, Comedy', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4', downloadUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
+            { id: 18, title: 'Women Talking', poster: './women.jpeg', rating: 7.3, year: 2022, genre: 'Drama, Thriller', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4', downloadUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' }
         ],
         'comedy': [
-            { id: 19, title: 'The Super Mario Bros. Movie', poster: './mario.jpeg', rating: 7.5, year: 2023, genre: 'Animation, Comedy' },
-            { id: 20, title: 'Guardians of the Galaxy Vol. 3', poster: 'gotg.jpeg', rating: 8.1, year: 2023, genre: 'Action, Comedy' },
-            { id: 21, title: 'Ant-Man and the Wasp: Quantumania', poster: './antman.jpeg', rating: 6.1, year: 2023, genre: 'Action, Comedy' },
-            { id: 22, title: 'Shazam! Fury of the Gods', poster: 'shazam.jpeg', rating: 6.2, year: 2023, genre: 'Action, Comedy' },
+            { id: 19, title: 'The Super Mario Bros. Movie', poster: './mario.jpeg', rating: 7.5, year: 2023, genre: 'Animation, Comedy', videoUrl: 'https://www.w3schools.com/html/mario.mp4', downloadUrl: 'https://www.w3schools.com/html/mario.mp4' },
+            { id: 20, title: 'Guardians of the Galaxy Vol. 3', poster: 'gotg.jpeg', rating: 8.1, year: 2023, genre: 'Action, Comedy', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4', downloadUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
+            { id: 21, title: 'Ant-Man and the Wasp: Quantumania', poster: './antman.jpeg', rating: 6.1, year: 2023, genre: 'Action, Comedy', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4', downloadUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
+            { id: 22, title: 'Shazam! Fury of the Gods', poster: 'shazam.jpeg', rating: 6.2, year: 2023, genre: 'Action, Comedy', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4', downloadUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
             { id: 23, title: 'Cocaine Bear', poster: './cocaine.jpeg', rating: 6.3, year: 2023, genre: 'Comedy, Horror' },
             { id: 24, title: 'Renfield', poster: './renfield.jpeg', rating: 6.4, year: 2023, genre: 'Comedy, Horror' }
         ],
         'sci-fi': [
-            { id: 25, title: 'Dune: Part Two', poster: './dune.jpeg', rating: 8.4, year: 2024, genre: 'Sci-Fi, Adventure' },
+            { id: 25, title: 'Dune: Part Two', poster: './dune.jpeg', rating: 8.4, year: 2024, genre: 'Sci-Fi, Adventure', videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4', downloadUrl: 'https://www.w3schools.com/html/mov_bbb.mp4' },
             { id: 26, title: 'The Creator', poster: 'https://via.placeholder.com/200x300/bb2a2a/ffffff?text=Creator', rating: 7.2, year: 2023, genre: 'Sci-Fi, Action' },
             { id: 27, title: 'Poor Things', poster: 'https://via.placeholder.com/200x300/cc3a3a/ffffff?text=Poor', rating: 7.8, year: 2023, genre: 'Sci-Fi, Drama' },
             { id: 28, title: 'Everything Everywhere All at Once', poster: './EEAAT.jpeg', rating: 8.0, year: 2022, genre: 'Sci-Fi, Drama' },
@@ -302,7 +302,7 @@ function loadDemoMovies() {
             { id: 30, title: 'Prey', poster: 'https://via.placeholder.com/200x300/ff6a6a/ffffff?text=Prey', rating: 7.2, year: 2022, genre: 'Sci-Fi, Action' }
         ],
         'horror': [
-            { id: 31, title: 'Five Nights at Freddy\'s', poster: './fivenights.jpeg', rating: 6.8, year: 2023, genre: 'Horror, Thriller' },
+            { id: 31, title: 'Five Nights at Freddy\'s', poster: './fivenights.jpeg', rating: 6.8, year: 2023, genre: 'Horror, Thriller', videoUrl: 'https://www.w3schools.com/html/fivenights.mp4', downloadUrl: 'https://www.w3schools.com/html/fivenights.mp4' },
             { id: 32, title: 'Talk to Me', poster: './talk.jpeg', rating: 7.4, year: 2023, genre: 'Horror, Thriller' },
             { id: 33, title: 'Evil Dead Rise', poster: './evildead.jpeg', rating: 6.9, year: 2023, genre: 'Horror, Thriller' },
             { id: 34, title: 'Scream VI', poster: './screem.jpeg', rating: 7.1, year: 2023, genre: 'Horror, Thriller' },
@@ -341,10 +341,12 @@ function createMovieCard(movie) {
     movieCard.className = 'movie-card';
     movieCard.setAttribute('data-movie-id', movie.id);
     
-    movieCard.innerHTML = `
+    // Ensure downloadUrl is present
+    const downloadUrl = movie.downloadUrl || movie.videoUrl || 'https://www.w3schools.com/html/mov_bbb.mp4';    movieCard.innerHTML = `
         <div class="movie-poster" data-movie-id="${movie.id}">
             <img src="${movie.poster}" alt="${movie.title}" loading="lazy">
             <div class="movie-overlay">
+                <button class="download-btn" data-download-url="${downloadUrl}"><i class="fas fa-download"></i></button>
                 <button class="play-btn" data-movie-id="${movie.id}"><i class="fas fa-play"></i></button>
                 <button class="info-btn" data-movie-id="${movie.id}"><i class="fas fa-info-circle"></i></button>
             </div>
@@ -399,11 +401,24 @@ function setupStreamingEventListeners() {
             const movieId = playBtn.getAttribute('data-movie-id');
             handlePlayMovie(movieId);
         }
-        
+
+        if (e.target.closest('.download-btn')) {
+            const downloadBtn = e.target.closest('.download-btn');
+            const movieId = downloadBtn.getAttribute('data-movie-id');
+            handleDownloadMovie(movieId);
+        }
+
         if (e.target.closest('.info-btn')) {
             const infoBtn = e.target.closest('.info-btn');
             const movieId = infoBtn.getAttribute('data-movie-id');
             handleMovieInfo(movieId);
+        }
+        
+        if (e.target.classList.contains('download-btn')) {
+            const downloadUrl = e.target.getAttribute('data-download-url');
+            if (downloadUrl) {
+                window.open(downloadUrl, '_blank');
+            }
         }
     });
     
@@ -429,6 +444,8 @@ function setupStreamingEventListeners() {
         });
     }
 }
+
+
 
 function handlePlayMovie(movieId) {
     // Get movie details and show play alert
@@ -534,3 +551,13 @@ function showNoSearchResults(searchTerm) {
         </p>
     `;
 }
+
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('download-btn')) {
+        const btn = e.target.closest('.download-btn');
+        const downloadUrl = btn.getAttribute('data-download-url');
+        if (downloadUrl) {
+            window.open(downloadUrl, '_blank');
+        }
+    }
+});
