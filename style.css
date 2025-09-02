@@ -1160,7 +1160,6 @@ body {
 .movie-card:hover .movie-overlay {
     opacity: 1;
 }
-
 .play-btn, .info-btn, .download-btn {
     background: var(--accent-color);
     border: none;
