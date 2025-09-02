@@ -534,7 +534,6 @@ function showSearchResults(movies, searchTerm) {
     searchSection.innerHTML = `
         <h3 class="category-heading">
             <i class="fas fa-search"></i> Search Results for "${searchTerm}"
-            <span class="scroll-hint">← Scroll →</span>
         </h3>
         <div class="movies-scroll-container">
             <div class="movies-grid search-grid"></div>
