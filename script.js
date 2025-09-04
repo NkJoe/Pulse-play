@@ -290,7 +290,7 @@ function loadDemoMovies() {
             { id: 24, title: 'Top Gun: Maverick', poster: './topgun.jpeg', rating: 8.3, year: 2022, genre: 'Action, Drama', videoUrl: '#', downloadUrl: 'https://downloadwella.com/cybkgpvpbhfa/Top.Gun.Maverick.(NKIRI.COM).2022.WEB-DL.DOWNLOADED.FROM.NKIRI.COM.mp4' }
         ],
         'animation': [
-            {id: 25, title: 'KPop Demon Hunters', poster: './kpop.jpeg', rating: '7.7', year: '2025', genre: 'Animation, Action, Adventure', videoUrl: '#', downloadUrl: 'https://downloadwella.com/sp50yf3am8nx/KPop.Demon.Hunters.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html'},
+            {id: 25, title: 'KPop Demon Hunters', poster: './kPop.jpeg', rating: '7.7', year: '2025', genre: 'Animation, Action, Adventure', videoUrl: '#', downloadUrl: 'https://downloadwella.com/sp50yf3am8nx/KPop.Demon.Hunters.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html'},
             {id: 26, title: 'Ne Zha 2', poster: './NeZha.jpeg', rating: '8.0', year: '2025', genre: 'Animation, Action, Adventure', videoUrl: '#', downloadUrl: 'https://downloadwella.com/uvn4jl9h0n25/Ne.Zha.2.(NKIRI.COM).WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html'},
             {id: 27, title: 'Elio', poster: './elio.jpeg', rating: '6.8', year: '2025', genre: 'Animation, Adventure, Comedy', videoUrl: '#', downloadUrl: 'https://downloadwella.com/tuu8ncjipusl/Elio.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html'},
             {id: 28, title: 'Demon Slayer: Kimetsu no Yaiba Infinity Castle', poster: './demonslayer.jpeg', rating: '8.7', year: '2025', genre: 'Animation, Adventure, Action', videoUrl: '#', downloadUrl: '#'},
