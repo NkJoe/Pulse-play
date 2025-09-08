@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Info | Pulse Play</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="icons8-microsoft-stream-2019-100 (1).png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="icons8-microsoft-stream-2019-100 (1).png" alt="Logo" class="logo">
+                <span class="brand-name">Pulse Play</span>
+            </div>
+            <div class="nav-controls">
+                <button id="theme-toggle" class="theme-toggle-btn" style="display: none;">
+                    <i id="sun-icon" class="fas fa-sun"></i>
+                    <i id="moon-icon" class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="nav-links" id="nav-links">
+                <ul>
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="streaming.html" class="nav-link"><i class="fas fa-film"></i> Movies</a></li>
+                </ul>
+            </div>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Movie Info Section -->
+    <main class="container" style="margin-top: 100px;">
+        <section class="movie-info-section" id="movie-info-section">
+            <!-- Movie info will be populated by JS -->
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="icons8-microsoft-stream-2019-100 (1).png" alt="Logo" class="footer-logo">
+                <span class="brand-name">Pulse Play</span>
+            </div>
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h4>Pulse Play</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="streaming.html">Movies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Pulse Play. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    // Movie Info Page Logic
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get movieId from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const movieId = urlParams.get('id');
+        if (!movieId) {
+            document.getElementById('movie-info-section').innerHTML = '<h2>Movie not found.</h2>';
+            return;
+        }
+
+        // Demo movie data (should match script.js)
+        const allDemoMovies = [];
+        const demoMovies = {
+            'trending': [
+                { id: 1, title: 'Sinners', poster: './sinners.jpeg', rating: 7.6, year: 2025, genre: 'Action, Horror', videoUrl: 'https://www.youtube.com/watch?v=bKGxHflevuk', downloadUrl: 'https://downloadwella.com/kmf1byurmb9y/Sinners.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html', synopsis: 'Trying to leave their troubled lives behind, twin brothers return to their Mississippi hometown to start again, only to discover that an even greater evil is waiting to welcome them back.'},
+                { id: 2, title: 'Weapons', poster: './weapons.jpeg', rating: 7.8, year: 2025, genre: 'Horror, Mystery', videoUrl: 'https://www.youtube.com/watch?v=OpThntO9ixc', downloadUrl: '#', synopsis: 'When all but one child from the same classroom mysteriously vanish on the same night at exactly the same time, a community is left questioning who or what is behind their disappearance.' },
+                { id: 3, title: 'Thunderbolts', poster: './thunderbolts.jpeg', rating: 7.2, year: 2025, genre: 'Action, Adventure, Crime', videoUrl: 'https://www.youtube.com/watch?v=hUUszE29jS0', downloadUrl: 'https://downloadwella.com/xvk5eqtw6esx/Thunderbolts.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html', synopsis: 'Ensnared in a death trap, an unconventional team of antiheroes -- Yelena Belova, Bucky Barnes, Red Guardian, Ghost, Taskmaster and John Walker -- embarks on a dangerous mission that forces them to confront the darkest corners of their pasts.' },
+                { id: 4, title: 'Superman', poster: './superman.jpeg', rating: 7.3, year: 2025, genre: 'Action, Adventure, Sci-Fi', videoUrl: 'https://www.youtube.com/watch?v=Ox8ZLF6cGM0', downloadUrl: 'https://downloadwella.com/f9dv2lm2wz5e/Superman.(NKIRI.COM).2025.WEB-DL.DOWNLOADED.FROM.NKIRI.COM.mkv.html', synopsis: 'When Superman gets drawn into conflicts at home and abroad, his actions are questioned, giving tech billionaire Lex Luthor the opportunity to get the Man of Steel out of the way for good. Will intrepid reporter Lois Lane and Superman\'s four-legged companion, Krypto, be able to help him before it\'s too late?' },
+                { id: 5, title: 'F1', poster: './f-1.jpeg', rating: 7.8, year: 2025, genre: 'Action, Drama, Sport', videoUrl: 'https://www.youtube.com/watch?v=69ffwl-8pCU', downloadUrl: 'https://downloadwella.com/z9e61s86y494/F1.The.Movie.(NKIIR.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html', synopsis: 'In the 1990s, Sonny Hayes was Formula 1\'s most promising driver until an accident on the track nearly ended his career. Thirty years later, the owner of a struggling Formula 1 team convinces Sonny to return to racing and become the best in the world. Driving alongside the team\'s hotshot rookie, Sonny soon learns that the road to redemption is not something you can travel alone.' },
+                { id: 6, title: 'Jurassic World: Rebirth', poster: './jurassic.jpeg', rating: 5.9, year: 2025, genre: 'Action, Adventure, Sci-fi', videoUrl: 'https://www.youtube.com/watch?v=jan5CFWs9ic', downloadUrl: 'https://downloadwella.com/nv5qd3ayopj5/Jurassic.World.Rebirth.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html', synopsis: 'Zora Bennett leads a team of skilled operatives to the most dangerous place on Earth, an island research facility for the original Jurassic Park. Their mission is to secure genetic material from dinosaurs whose DNA can provide life-saving benefits to mankind. As the top-secret expedition becomes more and more risky, they soon make a sinister, shocking discovery that\'s been hidden from the world for decades.' },
+                { id: 7, title: 'Mission Impossible: Dead Reckoning', poster: './mission-impossible.jpeg', rating: 8.5, year: 2023, genre: 'Action, Thriller', videoUrl: 'https://www.youtube.com/watch?v=avz06PDqDbM', downloadUrl: 'https://downloadwella.com/og67u751hl1s/Mission.Impossible.-.The.Final.Reckoning.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html', synopsis: 'Ethan Hunt and the IMF team must track down a terrifying new weapon that threatens all of humanity if it falls into the wrong hands. With control of the future and the fate of the world at stake, a deadly race around the globe begins. Confronted by a mysterious, all-powerful enemy, Ethan is forced to consider that nothing can matter more than the mission -- not even the lives of those he cares about most.' },
+                { id: 8, title: 'Oppenheimer', poster: './oppenheimer.jpeg', rating: 8.9, year: 2023, genre: 'Drama, History', videoUrl: 'https://www.youtube.com/watch?v=uYPbbksJxIg', downloadUrl: 'https://downloadwella.com/i2udddfbfato/Oppenheimer.(NKIRI.COM).2023.BluRay.DOWNLOADED.FROM.NKIRI.COM.mkv.html', synopsis: 'During World War II, Lt. Gen. Leslie Groves Jr. appoints physicist J. Robert Oppenheimer to work on the top-secret Manhattan Project. Oppenheimer and a team of scientists spend years developing and designing the atomic bomb. Their work comes to fruition on July 16, 1945, as they witness the world\'s first nuclear explosion, forever changing the course of history.' },
+                { id: 9, title: 'Barbie', poster: './barbie.jpeg', rating: 7.3, year: 2023, genre: 'Comedy, Fantasy', videoUrl: 'https://www.youtube.com/watch?v=pBk4NYhWNMM', downloadUrl: 'https://downloadwella.com/wgd63oc9k87e/Barbie.(NKIRI.COM).2023.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html', synopsis: 'Barbie and Ken are having the time of their lives in the colorful and seemingly perfect world of Barbie Land. However, when they get a chance to go to the real world, they soon discover the joys and perils of living among humans.' },
+                { id: 10, title: 'Dune: Part Two', poster: './dune.jpeg', rating: 8.4, year: 2024, genre: 'Sci-Fi, Adventure', videoUrl: 'https://www.youtube.com/watch?v=Way9Dexny3w', downloadUrl: 'https://downloadwella.com/4l4s5gt8myoy/Dune.Part.Two.(NKIRI.COM).2024.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html', synopsis: 'Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family. Facing a choice between the love of his life and the fate of the universe, he must prevent a terrible future only he can foresee.' },
+                { id: 11, title: 'The Super Mario Bros. Movie', poster: './mario.jpeg', rating: 7.5, year: 2023, genre: 'Animation, Comedy', videoUrl: 'https://www.youtube.com/watch?v=TnGl01FkMMo', downloadUrl: 'https://downloadwella.com/pxm4qmjegwaa/Super.Mario.Bros.Movie.(NKIRI.COM).2023.AMZN.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html', synopsis: 'While working underground to fix a water main, Brooklyn plumbers and brothers Mario and Luigi are transported through a mysterious pipe to a magical new world. But when the siblings are separated, an epic adventure begins.' },
+                { id: 12, title: 'Guardians of the Galaxy Vol. 3', poster: './GOTG.jpeg', rating: 8.1, year: 2023, genre: 'Action, Comedy', videoUrl: 'https://www.youtube.com/watch?v=u3V5KDHRQvk', downloadUrl: 'https://downloadwella.com/5rthk5bssrss/Guardians.of.the.Galaxy.Vol.3.(NKIRI.COM).2023.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html', synopsis: 'Still reeling from the loss of Gamora, Peter Quill must rally his team to defend the universe and protect one of their own. If the mission is not completely successful, it could possibly lead to the end of the Guardians as we know them.' }
+            ],
+        'action': [
+            { id: 13, title: 'The Fantastic Four: First Steps', poster: './fantasticfour.jpeg', rating: 7.3, year: 2025, genre: 'Action, Adventure, Sci-Fi', videoUrl: 'https://www.youtube.com/watch?v=18QQWa5MEcs', downloadUrl: '#', synopsis: 'Mister Fantastic, Invisible Woman, Human Torch and the Thing face their most daunting challenge yet as they defend Earth from Galactus and Silver Surfer.' },
+            { id: 14, title: 'The Naked Gun', poster: './nakedgun.jpeg', rating: 6.9, year: 2025, genre: 'Action, Comedy, Crime', videoUrl: 'https://www.youtube.com/watch?v=uLguU7WLreA', downloadUrl: 'https://downloadwella.com/conzvkn9gcce/The.Naked.Gun.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html', synopsis: 'Lt. Frank Drebin, a bumbling policeman of the NYPD, is on the trail of notorious criminal Vincent Ludwig. Soon he learns about Vincent\'s plan to assassinate Queen Elizabeth II and decides to stop him.' },
+            { id: 15, title: 'Nobody 2', poster: './nobody2.jpeg', rating: 6.7, year: 2025, genre: 'Action, Comedy, Crime', videoUrl: 'https://www.youtube.com/watch?v=-5X2pt95cIo', downloadUrl: 'https://downloadwella.com/rpu7exrxxjox/Nobody.2.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html', synopsis: 'Workaholic assassin Hutch Mansell takes his family on a much-needed vacation to the small tourist town of Plummerville. However, he soon finds himself in the crosshairs of a corrupt theme-park operator, a shady sheriff, and a bloodthirsty crime boss.' },
+            { id: 16, title: 'Ballerina', poster: './ballerina.jpeg', rating: 6.9, year: 2025, genre: 'Action, Thriller', videoUrl: 'https://www.youtube.com/watch?v=0FSwsrFpkbw', downloadUrl: 'https://downloadwella.com/oiujdtm8l9b3/Ballerina.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html', synopsis: 'Trained in the assassin traditions of the Ruska Roma, Eve Macarro takes on an army of killers as she seeks revenge against those responsible for the death of her father.' },
+            { id: 17, title: 'John Wick: Chapter 4', poster: './john-wick.jpeg', rating: 8.2, year: 2023, genre: 'Action, Crime', videoUrl: 'https://www.youtube.com/watch?v=qEVUtrk8_B4', downloadUrl: 'https://downloadwella.com/0pcd6mds5inw/John.Wick.Chapter.4.(NKIRI.COM).2023.WEB-DL.DOWNLOADED.FROM.NKIRI.COM.mkv.html', synopsis: 'With the price on his head ever increasing, legendary hit man John Wick takes his fight against the High Table global as he seeks out the most powerful players in the underworld, from New York to Paris to Japan to Berlin.' },
+            { id: 18, title: 'Fast X', poster: './fastX.jpeg', rating: 7.8, year: 2023, genre: 'Action, Thriller', videoUrl: 'https://www.youtube.com/watch?v=32RAq6JzY-w', downloadUrl: 'https://downloadwella.com/707wgtgr3p8r/Fast.X.(NKIRI.COM).2023.AMZN.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html', synopsis: 'Over many missions and against impossible odds, Dom Toretto and his family have outsmarted and outdriven every foe in their path. Now, they must confront the most lethal opponent they\'ve ever faced. Fueled by revenge, a terrifying threat emerges from the shadows of the past to shatter Dom\'s world and destroy everything -- and everyone -- he loves' },
+            { id: 29, title: 'The Equalizer 3', poster: './equilizer.jpeg', rating: 7.1, year: 2023, genre: 'Action, Crime', videoUrl: 'https://www.youtube.com/watch?v=19ikl8vy4zs', downloadUrl: 'https://downloadwella.com/bm9u6zc2z9k4/The.Equalizer.3.(NKIRI.COM).2023.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html', synopsis: 'Since giving up his life as a government assassin, Robert McCall finds solace in serving justice on behalf of the oppressed. Now living in Southern Italy, he soon discovers his new friends are under the control of local crime bosses. As events turn deadly, McCall becomes their protector by taking on the mafia.' },
+            { id: 20, title: 'Extraction 2', poster: './Extraction.jpeg', rating: 7.6, year: 2023, genre: 'Action, Thriller', videoUrl: 'https://www.youtube.com/watch?v=Y274jZs5s7s', downloadUrl: 'https://downloadwella.com/f8eog3il9rpg/Extraction.2.(NKIRI.COM).2023.NF.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html', synopsis: 'Back from the brink of death, commando Tyler Rake embarks on a dangerous mission to save a ruthless gangster\'s imprisoned family.' },
+            { id: 21, title: 'The Gray Man', poster: './grayman.jpeg', rating: 6.5, year: 2022, genre: 'Action, Thriller', videoUrl: 'https://www.youtube.com/watch?v=BmllggGO4pM', downloadUrl: '#', synopsis: 'When the CIA\'s top asset his identity known to no one uncovers agency secrets, he triggers a global hunt by assassins set loose by his ex-colleague.' },
+            { id: 22, title: 'The Amateur', poster: './amateur.jpeg', rating: 6.5, year: 2025, genre: 'Action, Thriller', videoUrl: 'https://www.youtube.com/watch?v=DCWcK4c-F8Q', downloadUrl: 'https://downloadwella.com/kq8ethfclwma/The.Amateur.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html', synopsis: 'Charlie Heller is a brilliant CIA decoder whose world comes crashing down when his wife dies in a London terrorist attack. When his supervisors refuse to take action, his intelligence becomes the ultimate weapon as he embarks on a dangerous trek across the globe to track down those responsible.' },
+            { id: 23, title: 'Heads of State', poster: './heads-of-state.jpeg', rating: 6.4, year: 2025, genre: 'Action, Comedy, Thriller', videoUrl: 'https://www.youtube.com/watch?v=8J646zM7UM8', downloadUrl: 'https://downloadwella.com/08jz1dm70av9/Heads.Of.State.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html', synopsis: 'U.S. President Will Derringer and British Prime Minister Sam Clarke have a not-so-friendly and very public rivalry. However, when Air Force One gets shot down over enemy territory, they find themselves on the run and working together to thwart a global conspiracy that threatens the entire free world.' },
+            { id: 24, title: 'Top Gun: Maverick', poster: './topgun.jpeg', rating: 8.3, year: 2022, genre: 'Action, Drama', videoUrl: 'https://www.youtube.com/watch?v=qSqVVswa420', downloadUrl: 'https://downloadwella.com/cybkgpvpbhfa/Top.Gun.Maverick.(NKIRI.COM).2022.WEB-DL.DOWNLOADED.FROM.NKIRI.COM.mp4', synopsis: 'After more than 30 years of service as one of the Navy\'s top aviators, Pete "Maverick" Mitchell is where he belongs, pushing the envelope as a courageous test pilot and dodging the advancement in rank that would ground him. Training a detachment of graduates for a special assignment, Maverick must confront the ghosts of his past and his deepest fears, culminating in a mission that demands the ultimate sacrifice from those who choose to fly it.' }
+        ],
+        'animation': [
+            {id: 25, title: 'KPop Demon Hunters', poster: './kPop.jpeg', rating: '7.7', year: '2025', genre: 'Animation, Action, Adventure', videoUrl: '#', downloadUrl: 'https://downloadwella.com/sp50yf3am8nx/KPop.Demon.Hunters.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html'},
+            {id: 26, title: 'Ne Zha 2', poster: './NeZha.jpeg', rating: '8.0', year: '2025', genre: 'Animation, Action, Adventure', videoUrl: '#', downloadUrl: 'https://downloadwella.com/uvn4jl9h0n25/Ne.Zha.2.(NKIRI.COM).WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html'},
+            {id: 27, title: 'Elio', poster: './elio.jpeg', rating: '6.8', year: '2025', genre: 'Animation, Adventure, Comedy', videoUrl: '#', downloadUrl: 'https://downloadwella.com/tuu8ncjipusl/Elio.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html'},
+            {id: 28, title: 'Demon Slayer: Kimetsu no Yaiba Infinity Castle', poster: './demonslayer.jpeg', rating: '8.7', year: '2025', genre: 'Animation, Adventure, Action', videoUrl: '#', downloadUrl: '#'},
+            {id: 29, title: 'Predator: Killer of Killers', poster: './predator.jpeg', rating: '7.5', year: '2025', genre: 'Animation, Action, Adventure', videoUrl: '#', downloadUrl: 'https://downloadwella.com/9wryoy5iz4ih/Predator.Killer.Of.Killers.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html'},
+            {id: 30, title: 'Smurfs', poster: './smurfs.jpeg', rating: '4.2', year: '2025', genre: 'Animation, Adventure, Comedy', videoUrl: '#', downloadUrl: 'https://downloadwella.com/n6txk8hjmfus/Smurfs.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html'},
+            {id: 31, title: 'Fixed', poster: './fixed.jpeg', rating: '5.2', year: '2025', genre: 'Animaton, Adventure, Comedy', videoUrl: '#', downloadUrl: 'https://downloadwella.com/r01unlk34re5/Fixed.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html'},
+            {id: 32, title: 'The kings of Kings', poster: './KOK.jpeg', rating: '6.8', year: '2025', genre: 'Animation, Family', videoUrl: '#', downloadUrl: 'https://downloadwella.com/d5y1ra9p1oc7/The.King.Of.Kings.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html'},
+            {id: 33, title: 'The Witcher: Sirens of the Deep', poster: './witcher.jpeg', rating: '6.1', year: '2025', genre: 'Animation, Action, Adventure', videoUrl: '#', downloadUrl: 'https://downloadwella.com/e598ss4xcine/The.Witcher.Sirens.of.the.Deep.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html'},
+            {id: 34, title: 'Plankton', poster: './plankton.jpeg', rating: '5.3', year: '2025', genre: 'Animation, Adventure, Comedy', videoUrl: '#', downloadUrl: 'https://downloadwella.com/dhb2ob3agkqm/Plankton.The.Movie.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html'},
+            {id: 35, title: 'Kaiju No. 8: Mission Recon', poster: './kaiju.jpeg', rating: '6.8', year: '2025', genre: 'Animation, Action, Sci-Fi', videoUrl: '#', downloadUrl: 'https://downloadwella.com/tgnu4tjvulou/Kaiju.No..8.Mission.Recon.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html'},
+            {id: 36, title: 'Iyanu: The Age of Wonders', poster: './iyanu.jpeg', rating: '6.8', year: '2025', genre: 'Animation, Action, Adventure', videoUrl: '#', downloadUrl: 'https://nkiri.com/iyanu-s01-complete-tv-series/'},
+        ],
+        'drama': [
+            { id: 37, title: 'Frankenstein', poster: './frankenstein.jpeg', rating: 7.4, year: 2025, genre: 'Drama, Fantasy, Horror', videoUrl: '#', downloadUrl: '#' },
+            { id: 38, title: 'The Map That Leads to You', poster: './map-that-leads-to-you.jpeg', rating: 6.2, year: 2025, genre: 'Drama, Romance', videoUrl: '#', downloadUrl: 'https://downloadwella.com/knjubfel6a2w/The.Map.That.Leads.To.You.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 39, title: 'Night Always Comes', poster: './night-always-comes.jpeg', rating: 5.9, year: 2025, genre: 'Crime, Drama, Thriller', videoUrl: '#', downloadUrl: 'https://downloadwella.com/d0wvci03xmb3/Night.Always.Comes.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 40, title: 'Highest 2 Lowest', poster: './highest-two-lowest.jpeg', rating: 6.7, year: 2025, genre: 'Crime, Drama, Mystery', videoUrl: '#', downloadUrl: '#' },
+            { id: 41, title: 'My Oxford Year', poster: './my-oxford-year.jpeg', rating: 5.9, year: 2025, genre: 'Drama, Romance, Comedy', videoUrl: '#', downloadUrl: 'https://downloadwella.com/eyxoc16vlbwm/My.Oxford.Year.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 42, title: 'Hallow Road', poster: './hallow-road.jpeg', rating: 6.0, year: 2025, genre: 'Drama, Horror, Thriller', videoUrl: '#', downloadUrl: 'https://nkiri.com/hallow-road-2025-download-hollywood-movie/' },
+            { id: 43, title: 'The Whale', poster: './whale.jpeg', rating: 7.7, year: 2022, genre: 'Drama, History', videoUrl: '#', downloadUrl: 'https://downloadwella.com/jsd3ha1ywuip/The.Whale.(NKIRI.COM).2022.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 44, title: 'Everything Everywhere All at Once', poster: './EEAAT.jpeg', rating: 8.0, year: 2022, genre: 'Drama, Sci-Fi', videoUrl: '#', downloadUrl: 'https://downloadwella.com/hvbq9u7i9hvo/Everything.Everywhere.All.At.Once.2022.720p.BluRay.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 45, title: 'The Banshees of Inisherin', poster: './banshee.jpeg', rating: 7.8, year: 2022, genre: 'Drama, Comedy', videoUrl: '#', downloadUrl: 'https://downloadwella.com/27u50ttipp9a/The.Banshees.of.Inisherin.(NKIRI.COM).2022.AMZN.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 46, title: 'Tár', poster: 'https://via.placeholder.com/200x300/1a2a2a/ffffff?text=Tar', rating: 7.4, year: 2022, genre: 'Drama, Music', videoUrl: '#', downloadUrl: '#' },
+            { id: 47, title: 'Triangle of Sadness', poster: './TOS.jpeg', rating: 7.2, year: 2022, genre: 'Drama, Comedy', videoUrl: '#', downloadUrl: 'https://downloadwella.com/ukqvvzegftld/Triangle.of.Sadness.(NKIRI.COM).2022.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 48, title: 'Women Talking', poster: './women-talking.jpeg', rating: 7.3, year: 2022, genre: 'Drama, Thriller', videoUrl: '#', downloadUrl: 'https://downloadwella.com/bdr64iyfpgkh/Women.Talking.(NKIRI.COM).2022.AMZN.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' }
+        ],
+        'comedy': [
+            { id: 49, title: 'The Thursday Murder Club', poster: './thursday-murder-club.jpeg', rating: 6.6, year: 2025, genre: 'Comedy, Crime Mystery', videoUrl: '#', downloadUrl: 'https://downloadwella.com/5yhs9sfeuf9n/The.Thursday.Murder.Club.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 50, title: 'Bugonia', poster: './bugonia.jpeg', rating: 7.1, year: 2025, genre: 'Comedy, Crime, Sci-Fi', videoUrl: '#', downloadUrl: '#' },
+            { id: 51, title: 'Happy Gilmore 2', poster: './happy-gilmore-2.jpeg', rating: 6.1, year: 2025, genre: 'Comedy, Sport', videoUrl: '#', downloadUrl: 'https://downloadwella.com/kkmjajvshls3/Happy.Gilmore.2.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 52, title: 'Honey Don\'t', poster: './honey-dont.jpeg', rating: 5.6, year: 2025, genre: 'Comedy, Crime, Mystery', videoUrl: '#', downloadUrl: '#' },
+            { id: 53, title: 'The Bad Guys 2', poster: './bad-guys-2.jpeg', rating: 7.1, year: 2025, genre: 'Comdey, Action, Animation', videoUrl: '#', downloadUrl: 'https://downloadwella.com/9dcuf5mpv57x/The.Bad.Guys.2.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 54, title: 'The Super Mario Bros. Movie', poster: './mario.jpeg', rating: 7.5, year: 2023, genre: 'Animation, Comedy', videoUrl: '#', downloadUrl: 'https://downloadwella.com/pxm4qmjegwaa/Super.Mario.Bros.Movie.(NKIRI.COM).2023.AMZN.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 55, title: 'Guardians of the Galaxy Vol. 3', poster: 'GOTG.jpeg', rating: 8.1, year: 2023, genre: 'Action, Comedy', videoUrl: '#', downloadUrl: 'https://downloadwella.com/5rthk5bssrss/Guardians.of.the.Galaxy.Vol.3.(NKIRI.COM).2023.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 56, title: 'Ant-Man and the Wasp: Quantumania', poster: './antman.jpeg', rating: 6.1, year: 2023, genre: 'Action, Comedy', videoUrl: '#', downloadUrl: 'https://downloadwella.com/r3c6t24vq7wz/Ant-Man.and.the.Wasp.Quantumania.(NKIRI.COM).2023.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 57, title: 'Shazam! Fury of the Gods', poster: 'shazam.jpeg', rating: 6.2, year: 2023, genre: 'Action, Comedy', videoUrl: '#', downloadUrl: 'https://downloadwella.com/6p5tcetrh40x/Shazam.Fury.of.the.gods.(NKIRI.COM).2023.WEB-HD.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 58, title: 'Cocaine Bear', poster: './cocaine.jpeg', rating: 6.3, year: 2023, genre: 'Comedy, Horror', videoUrl: '#', downloadUrl: 'https://downloadwella.com/47fltw86sb7a/Cocaine.Bear.(NKIRI.COM).2023.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 59, title: 'Renfield', poster: './renfield.jpeg', rating: 6.4, year: 2023, genre: 'Comedy, Horror', videoUrl: '#', downloadUrl: 'https://downloadwella.com/1rpo8lhw2o8t/Renfield.(NKIRI.COM).2023.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' }
+        ],
+        'sci-fi': [
+            { id: 60, title: 'Dune: Part Two', poster: './dune.jpeg', rating: 8.4, year: 2024, genre: 'Sci-Fi, Adventure', videoUrl: '#', downloadUrl: 'https://downloadwella.com/4l4s5gt8myoy/Dune.Part.Two.(NKIRI.COM).2024.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 61, title: 'The Creator', poster: './creator.jpeg', rating: 7.2, year: 2023, genre: 'Sci-Fi, Action', videoUrl: '#', downloadUrl: 'https://downloadwella.com/skhqtax47mkc/The.Creator.(NKIRI.COM).2023.AMZN.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 62, title: 'Poor Things', poster: './poor-things.jpeg', rating: 7.8, year: 2023, genre: 'Sci-Fi, Drama', videoUrl: '#', downloadUrl: 'https://downloadwella.com/6qymdgyqlj00/Poor.Things.(NKIRI.COM).2023.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 63, title: 'Everything Everywhere All at Once', poster: './EEAAT.jpeg', rating: 8.0, year: 2022, genre: 'Sci-Fi, Drama', videoUrl: '#', downloadUrl: 'https://downloadwella.com/hvbq9u7i9hvo/Everything.Everywhere.All.At.Once.2022.720p.BluRay.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 64, title: 'Nope', poster: './nope.jpeg', rating: 7.0, year: 2022, genre: 'Sci-Fi, Horror', videoUrl: '#', downloadUrl: 'https://downloadwella.com/liqxjcez79pf/Nope.(NKIRI.COM).2022.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mp4' },
+            { id: 65, title: 'Bugonia', poster: './bugonia.jpeg', rating: 7.1, year: 2025, genre: 'Comedy, Crime, Sci-Fi', videoUrl: '#', downloadUrl: '#' },
+            { id: 66, title: 'Superman', poster: './superman.jpeg', rating: 7.3, year: 2025, genre: 'Action, Adventure, Sci-Fi', videoUrl: '#', downloadUrl: 'https://downloadwella.com/f9dv2lm2wz5e/Superman.(NKIRI.COM).2025.WEB-DL.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 67, title: 'Jurassic World: Rebirth', poster: './jurassic.jpeg', rating: 5.9, year: 2025, genre: 'Action, Adventure, Sci-fi', videoUrl: '#', downloadUrl: 'https://downloadwella.com/nv5qd3ayopj5/Jurassic.World.Rebirth.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 69, title: 'The Fantastic Four: First Steps', poster: './fantasticfour.jpeg', rating: 7.3, year: 2025, genre: 'Action, Adventure, Sci-Fi', videoUrl: '#', downloadUrl: '#' },
+            { id: 69, title: 'Kaiju No. 8: Mission Recon', poster: './kaiju.jpeg', rating: '6.8', year: '2025', genre: 'Animation, Action, Sci-Fi', videoUrl: '#', downloadUrl: 'https://downloadwella.com/tgnu4tjvulou/Kaiju.No..8.Mission.Recon.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html'},
+            { id: 70, title: 'Prey', poster: './prey.jpeg', rating: 7.2, year: 2022, genre: 'Sci-Fi, Action', videoUrl: '#', downloadUrl: 'https://wetafiles.com/2tt9j6fswo3e/Prey.(NKIRI.COM).2022.HULU.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' }
+        ],
+        'horror': [
+            { id: 71, title: 'Five Nights at Freddy\'s', poster: './fivenights.jpeg', rating: 6.8, year: 2023, genre: 'Horror, Thriller', videoUrl: '#', downloadUrl: 'https://downloadwella.com/j3o6q5w6xeof/Five.Nights.at.Freddys.(NKIRI.COM).2023.PCOK.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 72, title: 'Talk to Me', poster: './talk.jpeg', rating: 7.4, year: 2023, genre: 'Horror, Thriller', videoUrl: '#', downloadUrl: 'https://downloadwella.com/9sw4x0bxbwcl/Talk.to.Me.(NKIRI.COM).2022.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 73, title: 'Evil Dead Rise', poster: './evildead.jpeg', rating: 6.9, year: 2023, genre: 'Horror, Thriller', videoUrl: '#', downloadUrl: 'https://downloadwella.com/k7ryg6maildx/Evil.Dead.Rise.(NKIRI.COM).2023.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 74, title: 'Scream VI', poster: './screem.jpeg', rating: 7.1, year: 2023, genre: 'Horror, Thriller', videoUrl: '#', downloadUrl: 'https://downloadwella.com/chwihjz3enbs/Scream.VI.2023.720p.BluRay.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 75, title: 'M3GAN', poster: './megan.jpeg', rating: 6.4, year: 2022, genre: 'Horror, Sci-Fi', videoUrl: '#', downloadUrl: 'https://downloadwella.com/byl6xvk9b2lo/M3GAN.(NKIRI.COM).2022.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 76, title: 'Nope', poster: './nope.jpeg', rating: 7.0, year: 2022, genre: 'Horror, Sci-Fi', videoUrl: '#', downloadUrl: 'https://downloadwella.com/liqxjcez79pf/Nope.(NKIRI.COM).2022.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mp4' },
+            { id: 77, title: 'Hallow Road', poster: './hallow-road.jpeg', rating: 6.0, year: 2025, genre: 'Horror, Drama, Thriller', videoUrl: '#', downloadUrl: 'https://nkiri.com/hallow-road-2025-download-hollywood-movie/' },
+            { id: 78, title: 'Frankenstein', poster: './frankenstein.jpeg', rating: 7.4, year: 2025, genre: 'Horror, Drama, Fantasy', videoUrl: '#', downloadUrl: '#' },
+            { id: 79, title: 'Sinners', poster: './sinners.jpeg', rating: 7.6, year: 2025, genre: 'Horror, Action', videoUrl: '#', downloadUrl: 'https://downloadwella.com/kmf1byurmb9y/Sinners.(NKIRI.COM).2025.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 80, title: 'Weapons', poster: './weapons.jpeg', rating: 7.8, year: 2025, genre: 'Horror, Mystery', videoUrl: '#', downloadUrl: '#' },
+            { id: 81, title: 'Cocaine Bear', poster: './cocaine.jpeg', rating: 6.3, year: 2023, genre: 'Horror, Comedy', videoUrl: '#', downloadUrl: 'https://downloadwella.com/47fltw86sb7a/Cocaine.Bear.(NKIRI.COM).2023.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 82, title: 'Renfield', poster: './renfield.jpeg', rating: 6.4, year: 2023, genre: 'Horror, Comedy', videoUrl: '#', downloadUrl: 'https://downloadwella.com/1rpo8lhw2o8t/Renfield.(NKIRI.COM).2023.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' },
+            { id: 83, title: 'Smile', poster: './smile.jpeg', rating: 6.6, year: 2022, genre: 'Horror, Thriller', videoUrl: '#', downloadUrl: 'https://downloadwella.com/n6h0t0w0aut1/Smile.(NKIRI.COM).2022.AMZN.WEBRip.DOWNLOADED.FROM.NKIRI.COM.mkv.html' }
+        ]
+        };
+        Object.values(demoMovies).forEach(arr => allDemoMovies.push(...arr));
+        // Find movie by id
+        const movie = allDemoMovies.find(m => m.id == movieId);
+        if (!movie) {
+            document.getElementById('movie-info-section').innerHTML = '<h2>Movie not found.</h2>';
+            return;
+        }
+        // Render movie info
+        let trailerHtml = '';
+        if (movie.videoUrl && movie.videoUrl.includes('youtube.com/watch')) {
+            // Convert YouTube link to embed
+            const videoId = movie.videoUrl.split('v=')[1].split('&')[0];
+            trailerHtml = `<div style="display: flex; justify-content: center; align-items: center; width: 100%;"><iframe width="700" height="360" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen style="border-radius: 12px;"></iframe></div>`;
+        } else if (movie.videoUrl && movie.videoUrl !== '#' && movie.videoUrl !== '') {
+            trailerHtml = `<div style="display: flex; justify-content: center; align-items: center; width: 100%;"><video id="movie-trailer" width="700" height="360" controls poster="${movie.poster}" style="border-radius: 12px;">
+                <source src="${movie.videoUrl}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video></div>`;
+        } else {
+            trailerHtml = `<div style="color: var(--text-muted); padding: 2rem; text-align: center;">Trailer not available for this movie.</div>`;
+        }
+
+        document.getElementById('movie-info-section').innerHTML = `
+            <div class="movie-info-page" style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;">
+                <div style="flex: 1; min-width: 280px; max-width: 350px;">
+                    <img src="${movie.poster}" alt="${movie.title}" style="width: 100%; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.2);">
+                </div>
+                <div style="flex: 2; min-width: 300px;">
+                    <h1 style="font-size: 2.5rem; font-weight: 700; color: var(--accent-color); margin-bottom: 1rem;">${movie.title}</h1>
+                    <div style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                        <span><i class="fas fa-calendar-alt"></i> ${movie.year}</span> &nbsp; | &nbsp;
+                        <span><i class="fas fa-film"></i> ${movie.genre}</span> &nbsp; | &nbsp;
+                        <span><i class="fas fa-star" style="color: gold;"></i> <span style="color: var(--accent-color); font-weight: 600;">${movie.rating}</span></span>
+                    </div>
+                    <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem;">${movie.synopsis ? movie.synopsis : 'No synopsis available for this movie.'}</p>
+                    <div style="display: flex; gap: 1rem;">
+                        <button class="play-btn" style="font-size: 1.2rem;" onclick="playMovie('${movie.videoUrl}')"><i class="fas fa-play"></i></button>
+                        <button class="download-btn" style="font-size: 1.2rem;" onclick="downloadMovie('${movie.downloadUrl}')"><i class="fas fa-download"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 2rem;">
+                <h2 style="font-size: 1.5rem; color: var(--accent-color); margin-bottom: 1rem;">Trailer</h2>
+                <div style="background: transparent; var(--bg-secondary); border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); padding: 1rem;">
+                    ${trailerHtml}
+                </div>
+            </div>
+        `;
+    });
+    // Play and Download functions
+    function playMovie(videoUrl) {
+        const trailer = document.getElementById('movie-trailer');
+        if (trailer && videoUrl && videoUrl !== '#') {
+            trailer.src = videoUrl;
+            trailer.play();
+        } else {
+            alert('Trailer not available for this movie.');
+        }
+    }
+    function downloadMovie(downloadUrl) {
+        if (downloadUrl && downloadUrl !== '#') {
+            window.open(downloadUrl, '_blank');
+        } else {
+            alert('Download not available for this movie.');
+        }
+    }
+    </script>
+</body>
+</html>

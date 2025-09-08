@@ -395,7 +395,7 @@ function createMovieCard(movie) {
         <div class="movie-poster" data-movie-id="${movie.id}">
             <img src="${movie.poster}" alt="${movie.title}" loading="lazy">
             <div class="movie-overlay">
-                <button class="download-btn" data-download-url="${downloadUrl}"><i class="fas fa-download"></i></button>
+                <button class="download-btn" data-download-url="${downloadUrl}" style="display: none;"><i class="fas fa-download"></i></button>
                 <button class="play-btn" data-movie-id="${movie.id}"><i class="fas fa-play"></i></button>
                 <button class="info-btn" data-movie-id="${movie.id}"><i class="fas fa-info-circle"></i></button>
             </div>
@@ -497,15 +497,8 @@ function setupStreamingEventListeners() {
 
 
 function handlePlayMovie(movieId) {
-    // Get movie details and show play alert
-    const movieCard = document.querySelector(`[data-movie-id="${movieId}"]`);
-    if (movieCard) {
-        const title = movieCard.querySelector('h4').textContent;
-        const rating = movieCard.querySelector('.rating').textContent;
-        const genre = movieCard.querySelector('.movie-genre').textContent;
-        
-        alert(`🎬 Now Playing: ${title}\n\n⭐ Rating: ${rating}/10\n🎭 Genre: ${genre}\n\nThis is a demo - in a real app, this would start the video player.`);
-    }
+    // Redirect to movie info page with movieId
+    window.location.href = `movie-info.html?id=${movieId}`;
 }
 
 function handleMovieInfo(movieId) {
