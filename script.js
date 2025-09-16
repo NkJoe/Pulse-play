@@ -512,26 +512,25 @@ function handleMovieInfo(movieId) {
 }
 
 function handleSearchResults(searchTerm) {
-    // Simple search through all movie cards
+    // Search through all movie cards, deduplicate by normalized title
     const allMovies = document.querySelectorAll('.movie-card');
-    const searchResults = [];
-    
+    const foundTitles = new Set();
+    const dedupedResults = [];
     allMovies.forEach(movieCard => {
-        const title = movieCard.querySelector('h4').textContent.toLowerCase();
-        if (title.includes(searchTerm.toLowerCase())) {
-            searchResults.push(movieCard);
+        const title = movieCard.querySelector('h4').textContent.trim().toLowerCase();
+        if (title.includes(searchTerm.toLowerCase()) && !foundTitles.has(title)) {
+            foundTitles.add(title);
+            dedupedResults.push(movieCard);
         }
     });
-    
-    if (searchResults.length > 0) {
+    if (dedupedResults.length > 0) {
         // Update hero title
         const heroTitle = document.querySelector('.hero-title');
         if (heroTitle) {
             heroTitle.textContent = `Search Results: ${searchTerm}`;
         }
-        
         // Show search results
-        showSearchResults(searchResults, searchTerm);
+        showSearchResults(dedupedResults, searchTerm);
     } else {
         showNoSearchResults(searchTerm);
     }
@@ -551,24 +550,43 @@ function showSearchResults(movies, searchTerm) {
     const searchSection = document.createElement('div');
     searchSection.className = 'category-section search-results';
     searchSection.innerHTML = `
-        <h3 class="category-heading">
-            <i class="fas fa-search"></i> Search Results for "${searchTerm}"
-        </h3>
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <h3 class="category-heading" style="margin-bottom: 0;">
+                <i class="fas fa-search"></i> Search Results for "${searchTerm}"
+            </h3>
+            <button id="cancel-search-btn" style="background: var(--accent-color); color: #fff; border: none; border-radius: 20px; padding: 0.5rem 1.2rem; font-size: 1rem; cursor: pointer; margin-left: 1rem;"><i class="fas fa-times"></i></button>
+        </div>
         <div class="movies-scroll-container">
             <div class="movies-grid search-grid"></div>
         </div>
     `;
-    
     const moviesGrid = searchSection.querySelector('.search-grid');
-    
     // Add movie cards
     movies.forEach(movieCard => {
         const clonedCard = movieCard.cloneNode(true);
         moviesGrid.appendChild(clonedCard);
     });
-    
     // Insert at the beginning
     moviesSection.insertBefore(searchSection, moviesSection.firstChild);
+
+    // Add cancel button functionality
+    const cancelBtn = searchSection.querySelector('#cancel-search-btn');
+    if (cancelBtn) {
+        cancelBtn.addEventListener('click', function() {
+            // Remove search results section
+            searchSection.remove();
+            // Restore all category sections
+            const categorySections = document.querySelectorAll('.category-section');
+            categorySections.forEach(section => {
+                section.style.display = 'block';
+            });
+            // Restore hero title if needed
+            const heroTitle = document.querySelector('.hero-title');
+            if (heroTitle) {
+                heroTitle.textContent = 'Trending Movies';
+            }
+        });
+    }
 }
 
 function showNoSearchResults(searchTerm) {
