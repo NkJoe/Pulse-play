@@ -46,36 +46,30 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-brand">
-                <img src="icons8-microsoft-stream-2019-100 (1).png" alt="Logo" class="footer-logo">
-                <span class="brand-name">Pulse Play</span>
+            <div class="footer-section">
+                <img src="icons8-microsoft-stream-2019-100 (1).png" alt="Pulse-Play" class="footer-logo">
+                <h3>Pulse-Play</h3>
+                <p>Your ultimate streaming destination</p>
             </div>
-            <div class="footer-links">
-                <div class="footer-section">
-                    <h4>Pulse Play</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="streaming.html">Movies</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Support</h4>
-                    <ul>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Help Center</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#">Terms</a></li>
-                        <li><a href="#">Privacy</a></li>
-                    </ul>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2025 Pulse Play. All rights reserved.
+            <p>&copy; 2025 Pulse-Play. All rights reserved.</p>
         </div>
     </footer>
 
@@ -239,7 +233,39 @@
                     ${trailerHtml}
                 </div>
             </div>
+            <div style="margin-top: 2.5rem;">
+                <h2 style="font-size: 1.5rem; color: var(--accent-color); margin-bottom: 1rem;">Related Movies</h2>
+                <div id="related-movies" style="display: flex; flex-wrap: wrap; gap: 1.5rem;"></div>
+            </div>
         `;
+        // Render related movies (by genre)
+        const relatedContainer = document.getElementById('related-movies');
+        if (relatedContainer) {
+            // Get genres as array (split by comma, trim)
+            const genres = movie.genre.split(',').map(g => g.trim().toLowerCase());
+            // Filter movies with at least one matching genre, exclude current movie
+            const related = allDemoMovies.filter(m => m.id != movie.id && m.genre && m.genre.split(',').some(g => genres.includes(g.trim().toLowerCase())));
+            // Limit to 6 related movies
+            related.slice(0, 6).forEach(rel => {
+                const card = document.createElement('div');
+                card.className = 'related-movie-card';
+                card.style = 'width: 150px; background: var(--bg-secondary); border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); overflow: hidden; cursor: pointer; transition: transform 0.2s;';
+                card.innerHTML = `
+                    <img src="${rel.poster}" alt="${rel.title}" style="width: 100%; height: 210px; object-fit: cover;">
+                    <div style="padding: 0.5rem 0.7rem;">
+                        <h4 style="font-size: 1rem; margin: 0 0 0.3rem 0; color: var(--accent-color); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${rel.title}</h4>
+                        <div style="font-size: 0.95rem; color: var(--text-secondary);">${rel.year}</div>
+                    </div>
+                `;
+                card.onclick = function() {
+                    window.location.href = `movie-info.html?id=${rel.id}`;
+                };
+                relatedContainer.appendChild(card);
+            });
+            if (related.length === 0) {
+                relatedContainer.innerHTML = '<div style="color: var(--text-muted);">No related movies found.</div>';
+            }
+        }
     });
     // Play and Download functions
     function playMovie(videoUrl) {

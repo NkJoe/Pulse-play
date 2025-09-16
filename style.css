@@ -661,28 +661,36 @@ body {
 }
 
 .footer-content {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
     margin-bottom: 2rem;
+    text-align: center;
 }
 
-.footer-brand {
+.footer-section {
+    min-width: 180px;
+    flex: 1 1 180px;
+    margin-bottom: 1.5rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 12px;
 }
 
 .footer-logo {
     width: 40px;
     height: 40px;
     border-radius: 8px;
+    margin-bottom: 0.7rem;
 }
 
-.footer-links {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+.footer-section h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
 }
 
 .footer-section h4 {
@@ -694,6 +702,7 @@ body {
 
 .footer-section ul {
     list-style: none;
+    padding: 0;
 }
 
 .footer-section li {
@@ -707,7 +716,23 @@ body {
 }
 
 .footer-section a:hover {
-    color: var(--text-primary);
+    color: var(--accent-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.social-links a {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--accent-hover);
 }
 
 .footer-bottom {
@@ -715,6 +740,39 @@ body {
     padding-top: 2rem;
     border-top: 1px solid var(--border-color);
     color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    .footer-section {
+        min-width: unset;
+        flex: unset;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 40px 0 10px;
+    }
+    .footer-content {
+        gap: 1rem;
+    }
+    .footer-section h3 {
+        font-size: 1.1rem;
+    }
+    .footer-section h4 {
+        font-size: 1rem;
+    }
+    .footer-bottom {
+        font-size: 0.95rem;
+        padding-top: 1rem;
+    }
 }
 
 /* Streaming Platform Specific Styles */
